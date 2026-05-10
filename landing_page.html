@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luneya — Where Teens Connect Meaningfully</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       CSS CUSTOM PROPERTIES — THEME SYSTEM
+       ============================================================ */
+
+    :root {
+      --transition-theme: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    /* ── DARK THEME ─────────────────────────────────────────── */
+    [data-theme="dark"] {
+      --bg-base:              #0c0b10;
+      --bg-surface:           #13121a;
+      --bg-elevated:          #1c1b26;
+      --bg-card:              rgba(255,255,255,0.06);
+      --bg-card-hover:        rgba(255,255,255,0.09);
+      --bg-input:             rgba(255,255,255,0.07);
+
+      --text-primary:         #e8e0ff;
+      --text-secondary:       #b8afd4;
+      --text-muted:           #7a738e;
+      --text-inverse:         #13121a;
+
+      --accent-primary:       #c4a8ff;
+      --accent-primary-deep:  #9b6dff;
+      --accent-secondary:     #85ceff;
+      --accent-glow:          rgba(196, 168, 255, 0.15);
+      --accent-glow-sm:       rgba(196, 168, 255, 0.08);
+
+      --border-subtle:        rgba(255,255,255,0.08);
+      --border-medium:        rgba(196,168,255,0.2);
+      --border-strong:        rgba(196,168,255,0.35);
+
+      --shadow-card:          0 4px 32px rgba(0,0,0,0.4);
+      --shadow-elevated:      0 12px 48px rgba(0,0,0,0.6);
+
+      --gradient-hero:        radial-gradient(ellipse 80% 60% at 50% -10%, rgba(155,109,255,0.22) 0%, transparent 65%),
+                              radial-gradient(ellipse 40% 40% at 80% 60%, rgba(133,206,255,0.1) 0%, transparent 55%),
+                              radial-gradient(ellipse 50% 50% at 10% 80%, rgba(196,168,255,0.08) 0%, transparent 50%);
+
+      --gradient-primary:     linear-gradient(135deg, #c4a8ff 0%, #9b6dff 50%, #7c4dff 100%);
+      --gradient-cta:         linear-gradient(135deg, #9b6dff 0%, #7c4dff 100%);
+
+      --blob-1:               rgba(196,168,255,0.12);
+      --blob-2:               rgba(133,206,255,0.08);
+
+      --nav-bg:               rgba(12,11,16,0.85);
+      --footer-bg:            #0a0910;
+
+      --chip-bg:              rgba(255,255,255,0.07);
+      --chip-border:          rgba(255,255,255,0.1);
+      --chip-text:            #9b90b8;
+
+      --step-bg:              rgba(255,255,255,0.05);
+      --safe-badge-bg:        rgba(133,206,255,0.12);
+      --safe-badge-text:      #85ceff;
+    }
+
+    /* ── LIGHT THEME ────────────────────────────────────────── */
+    [data-theme="light"] {
+      --bg-base:              #f8f5ff;
+      --bg-surface:           #ffffff;
+      --bg-elevated:          #f2eeff;
+      --bg-card:              rgba(255,255,255,0.75);
+      --bg-card-hover:        rgba(255,255,255,0.95);
+      --bg-input:             rgba(255,255,255,0.9);
+
+      --text-primary:         #1a1533;
+      --text-secondary:       #4a3f72;
+      --text-muted:           #8b80aa;
+      --text-inverse:         #ffffff;
+
+      --accent-primary:       #6b35d4;
+      --accent-primary-deep:  #5020b8;
+      --accent-secondary:     #007ab8;
+      --accent-glow:          rgba(107,53,212,0.12);
+      --accent-glow-sm:       rgba(107,53,212,0.06);
+
+      --border-subtle:        rgba(107,53,212,0.08);
+      --border-medium:        rgba(107,53,212,0.18);
+      --border-strong:        rgba(107,53,212,0.3);
+
+      --shadow-card:          0 4px 24px rgba(107,53,212,0.08), 0 1px 4px rgba(107,53,212,0.05);
+      --shadow-elevated:      0 12px 48px rgba(107,53,212,0.14), 0 4px 12px rgba(107,53,212,0.06);
+
+      --gradient-hero:        radial-gradient(ellipse 80% 60% at 50% -10%, rgba(107,53,212,0.12) 0%, transparent 65%),
+                              radial-gradient(ellipse 40% 40% at 80% 60%, rgba(0,122,184,0.07) 0%, transparent 55%),
+                              radial-gradient(ellipse 50% 50% at 10% 80%, rgba(196,168,255,0.1) 0%, transparent 50%);
+
+      --gradient-primary:     linear-gradient(135deg, #8b55e8 0%, #6b35d4 50%, #5020b8 100%);
+      --gradient-cta:         linear-gradient(135deg, #7845d8 0%, #5a28c0 100%);
+
+      --blob-1:               rgba(107,53,212,0.08);
+      --blob-2:               rgba(0,122,184,0.06);
+
+      --nav-bg:               rgba(248,245,255,0.9);
+      --footer-bg:            #f0eaff;
+
+      --chip-bg:              rgba(107,53,212,0.07);
+      --chip-border:          rgba(107,53,212,0.15);
+      --chip-text:            #6b35d4;
+
+      --step-bg:              rgba(107,53,212,0.05);
+      --safe-badge-bg:        rgba(0,122,184,0.1);
+      --safe-badge-text:      #007ab8;
+    }
+
+    /* ============================================================
+       RESET & BASE
+       ============================================================ */
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+      transition: var(--transition-theme);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── BACKGROUND GRADIENTS ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: var(--gradient-hero);
+      pointer-events: none;
+      z-index: 0;
+      transition: var(--transition-theme);
+    }
+
+    /* ── TYPOGRAPHY ── */
+    h1, h2, h3, h4 { font-family: 'Sora', sans-serif; }
+
+    .display {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(40px, 6vw, 68px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+    }
+    .headline-lg { font-size: clamp(28px, 4vw, 40px); font-weight: 700; line-height: 1.15; letter-spacing: -0.015em; }
+    .headline-md { font-size: clamp(20px, 2.5vw, 26px); font-weight: 600; line-height: 1.25; letter-spacing: -0.01em; }
+    .headline-sm { font-size: 18px; font-weight: 600; line-height: 1.35; }
+    .body-lg     { font-size: 18px; font-weight: 400; line-height: 1.7; }
+    .body-md     { font-size: 15px; font-weight: 400; line-height: 1.65; }
+    .label       { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+
+    .gradient-text {
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 4vw, 48px);
+    }
+
+    section { position: relative; z-index: 1; }
+
+    /* ============================================================
+       GLASS & CARD UTILITIES
+       ============================================================ */
+
+    .glass {
+      background: var(--bg-card);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border-subtle);
+      transition: background 0.4s ease, border-color 0.4s ease;
+    }
+    .glass:hover { background: var(--bg-card-hover); }
+
+    .card {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s ease, border-color 0.4s ease;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-elevated); }
+
+    /* ── BLOBS ── */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(80px);
+      transition: var(--transition-theme);
+    }
+
+    /* ============================================================
+       BUTTONS
+       ============================================================ */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      border-radius: 100px;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-primary {
+      background: var(--gradient-cta);
+      color: #fff;
+      padding: 14px 32px;
+      box-shadow: 0 4px 20px var(--accent-glow);
+    }
+    .btn-primary:hover { box-shadow: 0 8px 32px var(--accent-glow); opacity: 0.92; }
+
+    .btn-ghost {
+      background: var(--bg-card);
+      color: var(--accent-primary);
+      padding: 13px 28px;
+      border: 1px solid var(--border-medium);
+      backdrop-filter: blur(12px);
+    }
+    .btn-ghost:hover { border-color: var(--border-strong); background: var(--bg-card-hover); }
+
+    .btn-sm { padding: 10px 22px; font-size: 13px; }
+
+    /* ============================================================
+       NAVBAR
+       ============================================================ */
+
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: var(--nav-bg);
+      backdrop-filter: blur(32px);
+      -webkit-backdrop-filter: blur(32px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: var(--transition-theme);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 32px;
+    }
+
+    .nav-logo {
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      color: var(--accent-primary);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover { color: var(--accent-primary); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    /* ── THEME TOGGLE ── */
+    #theme-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 1px solid var(--border-medium);
+      color: var(--accent-primary);
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+      transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    #theme-toggle:hover { background: var(--bg-card-hover); transform: scale(1.08); }
+
+    .toggle-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s ease;
+    }
+    .toggle-icon.sun { position: absolute; }
+    .toggle-icon.moon { position: absolute; }
+
+    #theme-toggle .sun  { opacity: 0; transform: rotate(-90deg) scale(0.5); }
+    #theme-toggle .moon { opacity: 1; transform: rotate(0deg)   scale(1);   }
+    [data-theme="light"] #theme-toggle .sun  { opacity: 1; transform: rotate(0deg)  scale(1);   }
+    [data-theme="light"] #theme-toggle .moon { opacity: 0; transform: rotate(90deg) scale(0.5); }
+
+    /* Mobile nav */
+    .mobile-menu-btn {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      cursor: pointer;
+    }
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: var(--nav-bg);
+      backdrop-filter: blur(32px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 16px 0 20px;
+    }
+    .mobile-nav a {
+      padding: 12px 24px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .mobile-nav a:hover { color: var(--accent-primary); }
+    .mobile-nav.open { display: flex; }
+
+    /* ============================================================
+       HERO SECTION
+       ============================================================ */
+
+    #hero {
+      padding: 160px 0 100px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-medium);
+      border-radius: 100px;
+      padding: 8px 18px;
+      margin-bottom: 36px;
+      backdrop-filter: blur(12px);
+      transition: var(--transition-theme);
+    }
+    .hero-badge .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-secondary);
+      box-shadow: 0 0 10px var(--accent-secondary);
+      flex-shrink: 0;
+    }
+    .hero-badge span { font-size: 13px; font-weight: 600; color: var(--accent-primary); }
+
+    #hero h1 { margin-bottom: 28px; }
+    #hero .subtitle {
+      max-width: 600px;
+      margin: 0 auto 44px;
+      color: var(--text-secondary);
+    }
+
+    .hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 72px; }
+
+    /* ── HERO VISUAL ── */
+    .hero-visual {
+      position: relative;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .hero-phone-mockup {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-medium);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: var(--shadow-elevated), 0 0 80px var(--accent-glow);
+      transition: var(--transition-theme);
+    }
+
+    .mockup-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .mockup-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .mockup-info { flex: 1; }
+    .mockup-name { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+    .mockup-match { font-size: 12px; color: var(--accent-secondary); font-weight: 500; margin-top: 2px; }
+
+    .mockup-messages { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+    .msg {
+      padding: 12px 16px;
+      border-radius: 18px;
+      font-size: 14px;
+      line-height: 1.5;
+      max-width: 76%;
+      transition: var(--transition-theme);
+    }
+    .msg-them {
+      align-self: flex-start;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      border-bottom-left-radius: 6px;
+    }
+    .msg-me {
+      align-self: flex-end;
+      background: var(--gradient-cta);
+      color: #fff;
+      border-bottom-right-radius: 6px;
+    }
+
+    .mockup-input {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg-input);
+      border: 1px solid var(--border-subtle);
+      border-radius: 100px;
+      padding: 8px 8px 8px 18px;
+      transition: var(--transition-theme);
+    }
+    .mockup-input span { flex: 1; font-size: 14px; color: var(--text-muted); }
+    .mockup-send {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--gradient-cta);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    /* Floating badges */
+    .hero-float {
+      position: absolute;
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-medium);
+      border-radius: 16px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: var(--shadow-card);
+      transition: var(--transition-theme);
+      white-space: nowrap;
+    }
+    .hero-float .icon-circle {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .hero-float .float-text { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+    .hero-float .float-sub  { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
+    .float-tl { top: -20px; left: -80px; animation: floatA 6s ease-in-out infinite; }
+    .float-br { bottom: 20px; right: -80px; animation: floatB 5s ease-in-out infinite; }
+
+    @keyframes floatA { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+    @keyframes floatB { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+
+    /* ============================================================
+       SECTION HEADER
+       ============================================================ */
+
+    .section-header { text-align: center; margin-bottom: 64px; }
+    .section-label { color: var(--accent-primary); margin-bottom: 14px; }
+    .section-header h2 { margin-bottom: 16px; }
+    .section-header p { color: var(--text-secondary); max-width: 540px; margin: 0 auto; }
+
+    /* ============================================================
+       FEATURES SECTION
+       ============================================================ */
+
+    #features { padding: 100px 0; }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .feature-card {
+      padding: 32px 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-card.wide { grid-column: span 2; }
+    .feature-card.full { grid-column: span 3; }
+
+    .feature-icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: var(--accent-glow);
+      border: 1px solid var(--border-medium);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--accent-primary);
+      transition: var(--transition-theme);
+    }
+
+    .feature-card h3 { margin-bottom: 10px; }
+    .feature-card p  { color: var(--text-secondary); font-size: 14px; line-height: 1.65; }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .chip {
+      background: var(--chip-bg);
+      border: 1px solid var(--chip-border);
+      color: var(--chip-text);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      transition: var(--transition-theme);
+    }
+
+    .feature-card .blob {
+      width: 200px;
+      height: 200px;
+      background: var(--blob-1);
+    }
+
+    /* Single-chat visual */
+    .one-chat-visual {
+      margin-top: 20px;
+      background: var(--bg-input);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transition: var(--transition-theme);
+    }
+    .one-chat-visual .avatar-row { display: flex; align-items: center; gap: 10px; opacity: 0.35; filter: grayscale(1); }
+    .one-chat-visual .mini-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--border-medium); }
+    .one-chat-visual .placeholder-text { width: 80px; height: 10px; background: var(--border-subtle); border-radius: 6px; }
+
+    /* Safety checks */
+    .safety-checks { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+    .safety-check {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+    .safety-check .material-symbols-outlined { color: var(--accent-primary); font-size: 20px; }
+
+    /* ============================================================
+       HOW IT WORKS SECTION
+       ============================================================ */
+
+    #how-it-works { padding: 100px 0; }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+
+    /* Connector line */
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: calc(33.33% / 2 + 8px);
+      right: calc(33.33% / 2 + 8px);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-medium), var(--border-medium), transparent);
+      z-index: 0;
+    }
+
+    .step {
+      background: var(--step-bg);
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      padding: 36px 28px 32px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .step:hover { transform: translateY(-4px); box-shadow: var(--shadow-elevated); }
+
+    .step-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--gradient-cta);
+      color: #fff;
+      font-family: 'Sora', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      box-shadow: 0 4px 20px var(--accent-glow);
+    }
+    .step h3 { margin-bottom: 10px; }
+    .step p  { color: var(--text-secondary); font-size: 14px; line-height: 1.65; }
+
+    /* ============================================================
+       SAFETY SECTION
+       ============================================================ */
+
+    #safety { padding: 100px 0; }
+
+    .safety-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .safety-main {
+      padding: 40px 36px;
+    }
+    .safety-main h2 { margin-bottom: 16px; }
+    .safety-main p  { color: var(--text-secondary); margin-bottom: 32px; }
+
+    .safety-list { display: flex; flex-direction: column; gap: 16px; }
+    .safety-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px;
+      background: var(--accent-glow-sm);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      transition: var(--transition-theme);
+    }
+    .safety-item:hover { background: var(--accent-glow); }
+    .safety-item-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: var(--accent-glow);
+      border: 1px solid var(--border-medium);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-primary);
+      flex-shrink: 0;
+    }
+    .safety-item-content h4 { font-size: 14px; font-weight: 600; margin-bottom: 3px; }
+    .safety-item-content p  { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+    .safety-right { display: flex; flex-direction: column; gap: 20px; }
+
+    .safety-badge {
+      background: var(--safe-badge-bg);
+      border: 1px solid var(--border-medium);
+      border-radius: 24px;
+      padding: 28px;
+      text-align: center;
+      transition: var(--transition-theme);
+    }
+    .safety-badge .big-icon {
+      font-size: 48px;
+      color: var(--safe-badge-text);
+      display: flex;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+    .safety-badge h3 { font-size: 17px; margin-bottom: 6px; }
+    .safety-badge p  { font-size: 13px; color: var(--text-muted); }
+
+    .stat-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: 20px 16px;
+      text-align: center;
+      transition: var(--transition-theme);
+    }
+    .stat-card .stat-num {
+      font-family: 'Sora', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .stat-card .stat-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+    /* ============================================================
+       ABOUT SECTION
+       ============================================================ */
+
+    #about { padding: 100px 0; }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .about-text h2 { margin-bottom: 20px; }
+    .about-text p  { color: var(--text-secondary); line-height: 1.75; margin-bottom: 16px; }
+
+    .about-visual { position: relative; }
+    .about-quote {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-medium);
+      border-radius: 24px;
+      padding: 40px 36px;
+      position: relative;
+      transition: var(--transition-theme);
+    }
+    .quote-mark {
+      font-family: 'Sora', sans-serif;
+      font-size: 80px;
+      font-weight: 800;
+      line-height: 0.6;
+      color: var(--accent-primary);
+      opacity: 0.25;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .quote-text { font-family: 'Sora', sans-serif; font-size: 20px; font-weight: 600; line-height: 1.5; margin-bottom: 20px; }
+    .quote-author { font-size: 13px; color: var(--text-muted); }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .about-stat {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 18px;
+      transition: var(--transition-theme);
+    }
+    .about-stat .num {
+      font-family: 'Sora', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .about-stat .lbl { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
+
+    /* ============================================================
+       CTA SECTION
+       ============================================================ */
+
+    #cta { padding: 100px 0 120px; text-align: center; }
+
+    .cta-box {
+      position: relative;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-medium);
+      border-radius: 36px;
+      padding: 72px 48px;
+      overflow: hidden;
+      transition: var(--transition-theme);
+    }
+    .cta-box .blob {
+      width: 400px;
+      height: 400px;
+      background: var(--blob-1);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    .cta-box .blob2 {
+      width: 300px;
+      height: 300px;
+      background: var(--blob-2);
+      bottom: -80px;
+      right: -60px;
+    }
+
+    .cta-box > * { position: relative; z-index: 1; }
+    .cta-box h2  { margin-bottom: 20px; }
+    .cta-box p   { color: var(--text-secondary); max-width: 500px; margin: 0 auto 40px; }
+    .cta-box small { display: block; color: var(--text-muted); font-size: 12px; margin-top: 20px; }
+
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+
+    footer {
+      background: var(--footer-bg);
+      border-top: 1px solid var(--border-subtle);
+      padding: 48px 0 32px;
+      transition: var(--transition-theme);
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .footer-brand .logo {
+      font-family: 'Sora', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--accent-primary);
+      letter-spacing: -0.02em;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .footer-brand p { font-size: 13px; color: var(--text-muted); line-height: 1.65; max-width: 240px; }
+
+    .footer-col h4 { font-size: 12px; font-weight: 700; color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col li a { font-size: 13px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .footer-col li a:hover { color: var(--accent-primary); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-bottom span { font-size: 12px; color: var(--text-muted); }
+
+    /* ── AGE BADGE ── */
+    .age-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--safe-badge-bg);
+      border: 1px solid var(--border-medium);
+      border-radius: 100px;
+      padding: 5px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--safe-badge-text);
+    }
+
+    /* ============================================================
+       MATERIAL ICONS
+       ============================================================ */
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .icon-fill { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
+    /* ============================================================
+       ANIMATIONS
+       ============================================================ */
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.7s ease both; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    .delay-5 { animation-delay: 0.55s; }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+
+    @media (max-width: 1024px) {
+      .float-tl, .float-br { display: none; }
+      .safety-grid, .about-inner { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 28px; }
+    }
+
+    @media (max-width: 768px) {
+      #hero { padding: 120px 0 72px; }
+      .features-grid { grid-template-columns: 1fr; }
+      .feature-card.wide, .feature-card.full { grid-column: span 1; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .steps-grid::before { display: none; }
+      .nav-links, .nav-actions .btn:not(#theme-toggle) { display: none; }
+      .mobile-menu-btn { display: flex; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .cta-box { padding: 48px 24px; }
+      .stat-cards { grid-template-columns: 1fr 1fr; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-cta { flex-direction: column; align-items: center; }
+      .cta-btns { flex-direction: column; align-items: center; }
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: var(--border-subtle);
+      margin: 0;
+      transition: var(--transition-theme);
+    }
+
+    /* ── SCROLL BAR ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border-medium); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent-primary); }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Luneya</a>
+
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#safety">Safety</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" aria-label="Toggle theme">
+          <span class="toggle-icon sun">
+            <span class="material-symbols-outlined" style="font-size:20px">light_mode</span>
+          </span>
+          <span class="toggle-icon moon">
+            <span class="material-symbols-outlined" style="font-size:20px">dark_mode</span>
+          </span>
+        </button>
+
+        <a href="#" class="btn btn-ghost btn-sm" style="display:none" id="nav-login">Log In</a>
+        <a href="#cta" class="btn btn-primary btn-sm">Join Beta</a>
+
+        <!-- Mobile hamburger -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">
+          <span class="material-symbols-outlined" style="font-size:20px">menu</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile dropdown -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#features">Features</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#safety">Safety</a>
+    <a href="#about">About</a>
+    <div style="padding:12px 24px">
+      <a href="#cta" class="btn btn-primary" style="width:100%;justify-content:center">Join Beta</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section id="hero">
+  <div class="container">
+    <!-- Badge -->
+    <div class="hero-badge fade-up">
+      <span class="dot"></span>
+      <span>Designed exclusively for ages 13–17</span>
+    </div>
+
+    <!-- Headline -->
+    <h1 class="display fade-up delay-1">
+      Less noise.<br>
+      <span class="gradient-text">More meaning.</span>
+    </h1>
+
+    <p class="body-lg subtitle fade-up delay-2">
+      Luneya is a safe social space built for teenagers — where you connect over real interests, 
+      have one deep conversation at a time, and actually feel heard.
+    </p>
+
+    <div class="hero-cta fade-up delay-3">
+      <a href="#cta" class="btn btn-primary">
+        Join the Beta
+        <span class="material-symbols-outlined" style="font-size:18px">arrow_forward</span>
+      </a>
+      <a href="#how-it-works" class="btn btn-ghost">See How It Works</a>
+    </div>
+
+    <!-- Visual mockup -->
+    <div class="hero-visual fade-up delay-4">
+      <!-- Floating badge TL -->
+      <div class="hero-float float-tl">
+        <div class="icon-circle" style="background:var(--safe-badge-bg)">
+          <span class="material-symbols-outlined icon-fill" style="font-size:18px;color:var(--safe-badge-text)">verified_user</span>
+        </div>
+        <div>
+          <div class="float-text">End-to-end Encrypted</div>
+          <div class="float-sub">Your messages stay private</div>
+        </div>
+      </div>
+
+      <!-- Phone mockup -->
+      <div class="hero-phone-mockup">
+        <div class="mockup-top">
+          <div class="mockup-avatar">
+            <span class="material-symbols-outlined icon-fill" style="font-size:22px">person</span>
+          </div>
+          <div class="mockup-info">
+            <div class="mockup-name">Jordan, 16</div>
+            <div class="mockup-match">Matched on: Indie Photography</div>
+          </div>
+          <span class="age-badge">
+            <span class="material-symbols-outlined icon-fill" style="font-size:12px">shield</span>
+            Verified Teen
+          </span>
+        </div>
+
+        <div class="mockup-messages">
+          <div class="msg msg-them">Have you tried shooting during golden hour? The film look is unreal ✨</div>
+          <div class="msg msg-me">Just started! My last roll came out better than anything digital I've done.</div>
+          <div class="msg msg-them">That's the magic. It forces you to slow down and actually think before shooting.</div>
+        </div>
+
+        <div class="mockup-input">
+          <span>Share your thoughts…</span>
+          <div class="mockup-send">
+            <span class="material-symbols-outlined icon-fill" style="font-size:16px">send</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating badge BR -->
+      <div class="hero-float float-br">
+        <div class="icon-circle" style="background:var(--accent-glow)">
+          <span class="material-symbols-outlined icon-fill" style="font-size:18px;color:var(--accent-primary)">interests</span>
+        </div>
+        <div>
+          <div class="float-text">Shared Interest Match</div>
+          <div class="float-sub">Connected over Film Photography</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================
+     FEATURES
+     ============================================================ -->
+<section id="features">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="label section-label">Platform Features</p>
+      <h2 class="headline-lg">Thoughtfully built,<br>for how teens really connect</h2>
+      <p class="body-md">We stripped away everything that makes social media exhausting — and kept only what makes it meaningful.</p>
+    </div>
+
+    <div class="features-grid">
+
+      <!-- 1. Interest Matching (wide) -->
+      <div class="card feature-card wide reveal">
+        <div class="blob" style="top:-60px;right:-60px;filter:blur(80px)"></div>
+        <div class="feature-icon-wrap">
+          <span class="material-symbols-outlined icon-fill" style="font-size:24px">interests</span>
+        </div>
+        <h3 class="headline-sm">Interest-Based Matching</h3>
+        <p>You choose your passions — music, art, coding, sports, books, anime, anything. Luneya finds someone who shares them. No swiping, no photos, no algorithms guessing what you might like.</p>
+        <div class="chips">
+          <span class="chip">🎸 Indie Music</span>
+          <span class="chip">📸 Film Photography</span>
+          <span class="chip">✏️ Creative Writing</span>
+          <span class="chip">🎮 Indie Games</span>
+          <span class="chip">🌱 Environment</span>
+          <span class="chip">🔭 Astronomy</span>
+        </div>
+      </div>
+
+      <!-- 2. No public profiles (tall) -->
+      <div class="card feature-card reveal" style="animation-delay:0.1s">
+        <div class="blob" style="bottom:-40px;left:-40px;filter:blur(60px)"></div>
+        <div class="feature-icon-wrap">
+          <span class="material-symbols-outlined icon-fill" style="font-size:24px">visibility_off</span>
+        </div>
+        <h3 class="headline-sm">No Public Profiles</h3>
+        <p>Your profile is invisible until you match. No strangers browsing your information. Privacy is the default — not a setting you have to find.</p>
+        <div class="safety-checks">
+          <div class="safety-check">
+            <span class="material-symbols-outlined icon-fill">check_circle</span>
+            Hidden from search engines
+          </div>
+          <div class="safety-check">
+            <span class="material-symbols-outlined icon-fill">check_circle</span>
+            No profile screenshots possible
+          </div>
+          <div class="safety-check">
+            <span class="material-symbols-outlined icon-fill">check_circle</span>
+            Visible only to your match
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. One conversation (normal) -->
+      <div class="card feature-card reveal" style="animation-delay:0.15s">
+        <div class="blob" style="top:-30px;right:-30px;filter:blur(60px)"></div>
+        <div class="feature-icon-wrap">
+          <span class="material-symbols-outlined icon-fill" style="font-size:24px">chat_bubble</span>
+        </div>
+        <h3 class="headline-sm">One Chat at a Time</h3>
+        <p>No inbox chaos. One meaningful connection gets your full attention, and you theirs. It's how real friendships actually form.</p>
+        <div class="one-chat-visual">
+          <div class="avatar-row">
+            <div class="mini-avatar"></div>
+            <div class="placeholder-text"></div>
+          </div>
+          <span class="material-symbols-outlined" style="font-size:18px;color:var(--text-muted)">lock</span>
+        </div>
+      </div>
+
+      <!-- 4. No image sharing (normal) -->
+      <div class="card feature-card reveal" style="animation-delay:0.2s">
+        <div class="blob" style="bottom:-40px;right:-40px;filter:blur(60px)"></div>
+        <div class="feature-icon-wrap">
+          <span class="material-symbols-outlined icon-fill" style="font-size:24px">hide_image</span>
+        </div>
+        <h3 class="headline-sm">No Image Sharing</h3>
+        <p>Connections happen through words and ideas. No photos or videos can be sent in chat — eliminating a major vector for pressure and harm.</p>
+        <div class="chips" style="margin-top:16px">
+          <span class="chip">Words only</span>
+          <span class="chip">Zero pressure</span>
+        </div>
+      </div>
+
+      <!-- 5. Handle sharing control (normal) -->
+      <div class="card feature-card reveal" style="animation-delay:0.25s">
+        <div class="blob" style="top:-40px;left:-40px;filter:blur(60px)"></div>
+        <div class="feature-icon-wrap">
+          <span class="material-symbols-outlined icon-fill" style="font-size:24px">manage_accounts</span>
+        </div>
+        <h3 class="headline-sm">You Control Handle Sharing</h3>
+        <p>Want to continue the friendship somewhere else? You decide if and when to share your social handles — it's never shown automatically.</p>
+      </div>
+
+      <!-- 6. Built for teens (full) -->
+      <div class="card feature-card full reveal" style="text-align:center">
+        <div class="blob" style="top:50%;left:50%;transform:translate(-50%,-50%);width:300px;height:300px;filter:blur(100px)"></div>
+        <div class="feature-icon-wrap" style="margin:0 auto 20px">
+          <span class="material-symbols-outlined icon-fill" style="font-size:24px">family_restroom</span>
+        </div>
+        <h3 class="headline-sm">Designed Specifically for Teens</h3>
+        <p style="max-width:640px;margin:10px auto 0">
+          Luneya isn't a generic social app with age settings bolted on. Every feature, every design decision, every policy was built with a 15-year-old in mind — their safety, their emotional wellbeing, and their need for genuine connection.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================
+     HOW IT WORKS
+     ============================================================ -->
+<section id="how-it-works">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="label section-label">Getting Started</p>
+      <h2 class="headline-lg">Three simple steps<br>to a real connection</h2>
+      <p class="body-md">No follower counts. No algorithms. Just you, your interests, and one conversation worth having.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <h3 class="headline-sm">Create Your Profile</h3>
+        <p>Choose a username, pick your age group, and select 5–10 genuine interests. No real name needed. No photo required. Your identity is yours to protect.</p>
+      </div>
+
+      <div class="step reveal" style="transition-delay:0.12s">
+        <div class="step-num">2</div>
+        <h3 class="headline-sm">Match on Shared Interests</h3>
+        <p>Luneya finds someone in your age range who shares at least three of your interests. No browsing strangers. No swiping. A thoughtful match — not a feed.</p>
+      </div>
+
+      <div class="step reveal" style="transition-delay:0.24s">
+        <div class="step-num">3</div>
+        <h3 class="headline-sm">Build One Real Conversation</h3>
+        <p>You get one active chat. Put your whole self into it. If it clicks, you can choose to share how to stay in touch. If not, you can end it and match again. No pressure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================
+     SAFETY
+     ============================================================ -->
+<section id="safety">
+  <div class="container">
+    <div class="safety-grid">
+      <!-- Left: main content -->
+      <div class="card safety-main reveal">
+        <div class="blob" style="top:-80px;left:-80px;width:250px;height:250px;filter:blur(100px)"></div>
+        <span class="age-badge" style="margin-bottom:20px;display:inline-flex">
+          <span class="material-symbols-outlined icon-fill" style="font-size:12px">shield</span>
+          Safety First — Always
+        </span>
+        <h2 class="headline-lg">Your safety is<br>non-negotiable</h2>
+        <p class="body-md">Luneya was designed from the ground up with one question: what would make a parent comfortable, and a teenager feel free?</p>
+
+        <div class="safety-list">
+          <div class="safety-item">
+            <div class="safety-item-icon">
+              <span class="material-symbols-outlined icon-fill" style="font-size:18px">report</span>
+            </div>
+            <div class="safety-item-content">
+              <h4>Easy One-Tap Reporting</h4>
+              <p>Any message can be reported instantly. Our moderation team reviews every report within 24 hours.</p>
+            </div>
+          </div>
+
+          <div class="safety-item">
+            <div class="safety-item-icon">
+              <span class="material-symbols-outlined icon-fill" style="font-size:18px">block</span>
+            </div>
+            <div class="safety-item-content">
+              <h4>Zero Tolerance for Explicit Content</h4>
+              <p>Any account sending explicit, harmful, or inappropriate content is permanently banned — no second chances.</p>
+            </div>
+          </div>
+
+          <div class="safety-item">
+            <div class="safety-item-icon">
+              <span class="material-symbols-outlined icon-fill" style="font-size:18px">psychology</span>
+            </div>
+            <div class="safety-item-content">
+              <h4>Intentional Interaction Design</h4>
+              <p>No infinite scroll. No notification floods. Luneya is designed to reduce anxiety, not create it.</p>
+            </div>
+          </div>
+
+          <div class="safety-item">
+            <div class="safety-item-icon">
+              <span class="material-symbols-outlined icon-fill" style="font-size:18px">lock_person</span>
+            </div>
+            <div class="safety-item-content">
+              <h4>Privacy-First Architecture</h4>
+              <p>We collect minimal data, never sell it, and our infrastructure is designed to protect teen identities by default.</p>
+            </div>
+          </div>
+
+          <div class="safety-item">
+            <div class="safety-item-icon">
+              <span class="material-symbols-outlined icon-fill" style="font-size:18px">supervisor_account</span>
+            </div>
+            <div class="safety-item-content">
+              <h4>Guardian Transparency Mode</h4>
+              <p>Parents can opt in to receive weekly activity summaries — without accessing private messages. Trust, with oversight.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: badges & stats -->
+      <div class="safety-right">
+        <div class="safety-badge reveal" style="transition-delay:0.1s">
+          <div class="big-icon">
+            <span class="material-symbols-outlined icon-fill">gpp_good</span>
+          </div>
+          <h3>No Explicit Content — Ever</h3>
+          <p>Images, videos, and links cannot be shared inside chats. Ever. This single decision eliminates the most common vectors of teen online harm.</p>
+        </div>
+
+        <div class="stat-cards reveal" style="transition-delay:0.2s">
+          <div class="stat-card">
+            <div class="stat-num">&lt; 24h</div>
+            <div class="stat-label">Report response time</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">0</div>
+            <div class="stat-label">Images ever shared</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">13–17</div>
+            <div class="stat-label">Age range only</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">1</div>
+            <div class="stat-label">Active chat at a time</div>
+          </div>
+        </div>
+
+        <div class="card" style="padding:24px;border-radius:20px" class="reveal">
+          <p class="label" style="color:var(--accent-primary);margin-bottom:10px">Guardian Guide</p>
+          <p style="font-size:14px;color:var(--text-secondary);line-height:1.6">
+            We've published a detailed guide for parents explaining every feature, every safety measure, and how to talk to your teen about Luneya.
+          </p>
+          <a href="#" class="btn btn-ghost btn-sm" style="margin-top:16px;display:inline-flex">
+            Read the Guide
+            <span class="material-symbols-outlined" style="font-size:16px">open_in_new</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section id="about">
+  <div class="container">
+    <div class="about-inner">
+      <!-- Text -->
+      <div class="about-text reveal">
+        <p class="label section-label" style="text-align:left;margin-bottom:14px">Why Luneya Exists</p>
+        <h2 class="headline-lg">Teens today are more<br>connected — and lonelier<br>than ever</h2>
+        <p class="body-md" style="margin-top:20px">
+          The average teenager sends hundreds of messages a day. They have thousands of followers. 
+          They're constantly online. And yet study after study shows Gen Z feels deeply disconnected 
+          from real relationships.
+        </p>
+        <p class="body-md">
+          Mainstream social media optimises for engagement — likes, reactions, virality. 
+          It rewards performance over presence. It replaces depth with volume.
+        </p>
+        <p class="body-md">
+          Luneya is the opposite. It's designed to create the conditions for one genuine 
+          conversation — and get out of the way.
+        </p>
+
+        <div class="about-stats">
+          <div class="about-stat">
+            <div class="num">61%</div>
+            <div class="lbl">of teens feel lonely despite being online daily</div>
+          </div>
+          <div class="about-stat">
+            <div class="num">3.7h</div>
+            <div class="lbl">average daily screen time for teenagers</div>
+          </div>
+          <div class="about-stat">
+            <div class="num">1 in 3</div>
+            <div class="lbl">teens report feeling worse after social media use</div>
+          </div>
+          <div class="about-stat">
+            <div class="num">0</div>
+            <div class="lbl">infinite scroll features on Luneya</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quote visual -->
+      <div class="about-visual reveal" style="transition-delay:0.15s">
+        <div class="about-quote">
+          <div class="blob" style="top:-60px;right:-60px;width:200px;height:200px;filter:blur(80px)"></div>
+          <span class="quote-mark">"</span>
+          <p class="quote-text">
+            "I talked to one person on Luneya for two weeks. I still think about that conversation. 
+            On Instagram I talk to hundreds of people and remember none of it."
+          </p>
+          <span class="quote-author">— Beta tester, 15, Mumbai</span>
+        </div>
+
+        <div style="margin-top:20px" class="card" style="padding:24px;border-radius:20px">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+            <div style="width:40px;height:40px;border-radius:12px;background:var(--accent-glow);border:1px solid var(--border-medium);display:flex;align-items:center;justify-content:center;color:var(--accent-primary)">
+              <span class="material-symbols-outlined icon-fill" style="font-size:20px">favorite</span>
+            </div>
+            <h3 class="headline-sm">The Luneya Principle</h3>
+          </div>
+          <p style="font-size:14px;color:var(--text-secondary);line-height:1.65">
+            One meaningful conversation is worth more than a thousand hollow interactions. 
+            We're not trying to build the biggest teen platform. We're building the most intentional one.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================
+     CTA
+     ============================================================ -->
+<section id="cta">
+  <div class="container">
+    <div class="cta-box reveal">
+      <div class="blob blob"></div>
+      <div class="blob blob2"></div>
+
+      <div class="hero-badge" style="margin:0 auto 32px">
+        <span class="dot"></span>
+        <span>Now accepting beta sign-ups</span>
+      </div>
+
+      <h2 class="headline-lg">Ready for a conversation<br>that actually means something?</h2>
+      <p class="body-lg">
+        Join thousands of teenagers who are done with the noise — 
+        and ready for one real connection.
+      </p>
+
+      <div class="cta-btns">
+        <a href="#" class="btn btn-primary">
+          Join the Beta — It's Free
+          <span class="material-symbols-outlined" style="font-size:18px">arrow_forward</span>
+        </a>
+        <a href="#safety" class="btn btn-ghost">How We Keep You Safe</a>
+      </div>
+
+      <small>For ages 13–17 only. Parent approval required for under 16. No data sold. Ever.</small>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo">Luneya</span>
+        <p>A safe space for teenagers to find genuine connections through shared interests and intentional conversation.</p>
+        <div style="margin-top:16px">
+          <span class="age-badge">For ages 13–17 only</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#safety">Safety</a></li>
+          <li><a href="#about">Our Story</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Safety</h4>
+        <ul>
+          <li><a href="#">Guardian Guide</a></li>
+          <li><a href="#">Safety Policies</a></li>
+          <li><a href="#">Report Abuse</a></li>
+          <li><a href="#">Trust & Safety Team</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="#">COPPA Compliance</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 Luneya. All rights reserved.</span>
+      <span>Made with care for teens, by people who care about teens.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+  /* ── THEME SYSTEM ─────────────────────────────────────────── */
+
+  const html        = document.documentElement;
+  const themeToggle = document.getElementById('theme-toggle');
+
+  /**
+   * Applies a theme and persists to localStorage.
+   * @param {'dark'|'light'} theme
+   */
+  function setTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    localStorage.setItem('luneya-theme', theme);
+  }
+
+  /**
+   * Reads theme preference:
+   *   1. localStorage (user's explicit choice)
+   *   2. System preference
+   *   3. Default: dark
+   */
+  function initTheme() {
+    const saved  = localStorage.getItem('luneya-theme');
+    const system = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    setTheme(saved || system);
+  }
+
+  themeToggle.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme');
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  });
+
+  // Respond to system preference changes (if no user override)
+  window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('luneya-theme')) {
+      setTheme(e.matches ? 'light' : 'dark');
+    }
+  });
+
+  initTheme();
+
+  /* ── MOBILE MENU ──────────────────────────────────────────── */
+
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileNav     = document.getElementById('mobile-nav');
+
+  mobileMenuBtn.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    mobileMenuBtn.querySelector('.material-symbols-outlined').textContent =
+      open ? 'close' : 'menu';
+  });
+
+  // Close on link click
+  mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      mobileMenuBtn.querySelector('.material-symbols-outlined').textContent = 'menu';
+    });
+  });
+
+  /* ── SCROLL REVEAL ────────────────────────────────────────── */
+
+  const revealEls = document.querySelectorAll('.reveal');
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          // Stagger siblings slightly
+          const siblings = [...entry.target.parentNode.querySelectorAll('.reveal')];
+          const idx = siblings.indexOf(entry.target);
+          entry.target.style.transitionDelay = (idx * 0.07) + 's';
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  /* ── NAVBAR SHADOW ON SCROLL ──────────────────────────────── */
+
+  const navbar = document.getElementById('navbar');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 12) {
+      navbar.style.boxShadow = '0 1px 32px rgba(0,0,0,0.18)';
+    } else {
+      navbar.style.boxShadow = 'none';
+    }
+  }, { passive: true });
+
+  /* ── DESKTOP NAV LOGIN BUTTON (show on wider screens) ──────── */
+
+  function checkNavWidth() {
+    const loginBtn = document.getElementById('nav-login');
+    if (window.innerWidth >= 768) {
+      loginBtn.style.display = 'inline-flex';
+    } else {
+      loginBtn.style.display = 'none';
+    }
+  }
+  checkNavWidth();
+  window.addEventListener('resize', checkNavWidth);
+</script>
+
+</body>
+</html>
