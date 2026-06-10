@@ -18,7 +18,7 @@ function setTheme(theme) {
 function initTheme() {
   const saved = localStorage.getItem('luneya-theme');
   const system = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-  setTheme(saved || system);
+  setTheme(saved || 'light');
 }
 
 themeToggle.addEventListener('click', () => {
