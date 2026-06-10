@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service • Luneya</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .safety-page {
+            padding-top: 120px;
+            padding-bottom: 100px;
+        }
+
+        .guide-header {
+            margin-bottom: 60px;
+        }
+
+        .guide-header h1 {
+            margin-bottom: 18px;
+        }
+
+        .guide-header p {
+            color: var(--ink-2);
+            max-width: 650px;
+        }
+
+        .guide-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .guide-card {
+            padding: 32px;
+        }
+
+        .guide-card h2 {
+            margin-bottom: 14px;
+        }
+
+        .guide-card p {
+            color: var(--ink-2);
+            margin-bottom: 18px;
+        }
+
+        .guide-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .guide-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 14px;
+            background: var(--accent-subtle-2);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+
+        .guide-item .material-symbols-outlined {
+            color: var(--accent);
+        }
+
+        .guide-footer {
+            margin-top: 48px;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .guide-footer p:first-child {
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 40px;
+            text-decoration: none;
+            color: var(--ink-2);
+        }
+
+        .back-link:hover {
+            color: var(--ink);
+        }
+
+        /* ── Layout shell ── */
+        .policy-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 64px;
+            /* The grid itself doesn't scroll — children handle their own overflow */
+            align-items: start;
+        }
+
+        /* ── Left nav: sticky, stops at viewport top offset ── */
+        .policy-nav {
+            position: sticky;
+            top: 100px;                 /* sits just below the navbar */
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+            border-left: 1px solid var(--border);
+            padding-left: 20px;
+        }
+
+        .policy-nav a {
+            display: block;
+            margin-bottom: 14px;
+            text-decoration: none;
+            color: var(--ink-2);
+            font-size: 0.9rem;
+            transition: color 0.15s ease, padding-left 0.15s ease;
+        }
+
+        .policy-nav a:hover {
+            color: var(--ink);
+        }
+
+        .policy-nav a.active {
+            color: var(--accent);
+            padding-left: 8px;
+            border-left: 2px solid var(--accent);
+            margin-left: -21px;   /* pulls it flush against the existing border-left on .policy-nav */
+            font-weight: 500;
+        }
+
+        /* ── Right content: scrolls normally with the page ── */
+        .policy-content {
+            /* No max-width cap — let it use the full remaining column */
+            width: 100%;
+        }
+
+        .policy-section {
+            margin-bottom: 72px;
+        }
+
+        .policy-section p,
+        .policy-section li {
+            color: var(--ink-2);
+            line-height: 1.8;
+        }
+
+        /* paragraph breathing room — replaces the <br> tags */
+        .policy-section p + p {
+            margin-top: 20px;
+        }
+
+        .policy-section ul {
+            margin-top: 16px;
+            padding-left: 20px;
+        }
+
+        .policy-section li {
+            margin-bottom: 10px;
+        }
+
+        /* ── Wide screens: expand the outer container ── */
+        @media (min-width: 1280px) {
+            .safety-page .container--narrow {
+                max-width: 1100px;
+                margin-inline: auto;
+                padding-inline: 40px;
+            }
+        }
+
+        /* ── Mobile: hide nav, full-width content ── */
+        @media (max-width: 900px) {
+            .policy-layout {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .policy-nav {
+                display: none;
+            }
+        }
+
+        /* ── Scroll-to-top button: mobile only ── */
+        #scroll-top {
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+            #scroll-top {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: fixed;
+                bottom: 28px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                background: var(--accent);
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(8px);
+                transition: opacity 0.2s ease, transform 0.2s ease;
+                z-index: 999;
+            }
+
+            #scroll-top.visible {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translateY(0);
+            }
+
+            #scroll-top .material-symbols-outlined {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav id="navbar" class="is-scrolled">
+    <div class="container nav-inner">
+        <a href="index.html" class="nav-logo">Luneya</a>
+
+        <div class="nav-actions">
+            <button id="theme-toggle">
+                <span class="toggle-icon moon material-symbols-outlined">dark_mode</span>
+                <span class="toggle-icon sun material-symbols-outlined">light_mode</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<main class="safety-page">
+
+    <div class="container--narrow">
+
+        <a href="index.html" class="back-link">
+            <span class="material-symbols-outlined">arrow_back</span>
+            Back to Luneya
+        </a>
+
+        <div class="guide-header">
+            <span class="section-label t-label">Terms of Service</span>
+
+            <h1 class="t-h1">
+                The rules for using Luneya.
+            </h1>
+
+            <p class="t-body-lg">
+                These terms explain what you can expect from Luneya,
+                what we expect from users, and how the platform works.
+            </p>
+
+            <p class="t-body" style="margin-top:16px;">
+                Last updated: June 2026
+            </p>
+        </div>
+
+        <div class="policy-layout">
+
+    <aside class="policy-nav">
+
+        <a href="#agreement">Agreement</a>
+        <a href="#eligibility">Eligibility</a>
+        <a href="#accounts">Accounts</a>
+        <a href="#acceptable-use">Acceptable Use</a>
+        <a href="#content">User Content</a>
+        <a href="#enforcement">Enforcement</a>
+        <a href="#termination">Termination</a>
+        <a href="#changes">Changes</a>
+        <a href="#contact">Contact</a>
+
+    </aside>
+
+    <article class="policy-content">
+
+        <section id="agreement" class="policy-section">
+
+            <h2 class="t-h2">
+                Agreement
+            </h2>
+
+            <p>
+                By creating an account, logging in, or otherwise using Luneya — including browsing the platform without an account — you agree to be bound by these Terms of Service. Please read them carefully before using the platform.
+            </p>
+
+            <p>
+                If you do not agree with any part of these terms, you should not create an account or use Luneya. Continuing to use the platform after any updates to these terms means you accept the updated version.
+            </p>
+
+            <p>
+                These terms form a legal agreement between you (the user) and Luneya. They exist to define the rights and responsibilities of everyone on the platform, so that Luneya remains a safe, honest, and enjoyable space for teenagers. They are written in plain language intentionally — we want you to actually understand what you're agreeing to.
+            </p>
+
+            <p>
+                If you are under 18, we strongly encourage you to read these terms with a parent or guardian and ask questions if anything is unclear.
+            </p>
+
+        </section>
+
+        <section id="eligibility" class="policy-section">
+
+            <h2 class="t-h2">
+                Eligibility
+            </h2>
+
+            <p>
+                Luneya is built specifically for teenagers between the ages of 13 and 17. It is not designed for adults, and adults are not permitted to create accounts or use the platform as regular users.
+            </p>
+
+            <ul>
+                <li><strong>Minimum age:</strong> You must be at least 13 years old to create an account. This is required by law in many countries, including India and the United States, which restrict online services from collecting personal data from children under 13 without verifiable parental consent.</li>
+                <li><strong>Maximum age:</strong> You must not be older than 17 at the time you register. If you turn 18 while using Luneya, your account may be reviewed and transitioned or removed in accordance with our policies at that time.</li>
+                <li><strong>Accurate information:</strong> You must provide truthful and accurate information when creating your account, including your age and other details. Providing false information — especially about your age — is a violation of these terms and may result in immediate account removal.</li>
+                <li><strong>One account per person:</strong> Each person may only hold one account on Luneya. Creating multiple accounts to circumvent restrictions or bans is not allowed.</li>
+            </ul>
+
+            <p>
+                We take age eligibility seriously because the platform is designed with teenagers in mind. Features, content policies, and safety measures are all built around this specific age group. Adults are not permitted to use Luneya as regular users. Accounts found to belong to adults may be restricted, reviewed, or removed in accordance with our policies.
+            </p>
+
+            <p>
+                Accounts found to be outside the eligible age range — whether under 13 or over 17 — will be suspended or permanently removed without prior notice.
+            </p>
+
+        </section>
+
+        <section id="accounts" class="policy-section">
+
+            <h2 class="t-h2">
+                Accounts
+            </h2>
+
+            <p>
+                Your account is yours, and you are responsible for everything that happens through it. Keeping it secure protects both you and others on the platform.
+            </p>
+
+            <ul>
+                <li><strong>Keep your password secure:</strong> Use a strong, unique password and do not write it somewhere others can find it. If you think your account has been accessed without your permission, change your password immediately and reach out to us at <!-- TODO: placeholder email --> legal@luneya.app.</li>
+                <li><strong>Do not share your account:</strong> Your account is personal to you. Sharing your login credentials with others — even close friends — means someone else can act on your behalf, post under your name, or make changes you did not intend. Shared accounts may be suspended.</li>
+                <li><strong>Do not create accounts for others:</strong> You may not register an account in someone else's name, or help another person create an account in a way that misrepresents their identity or age.</li>
+                <li><strong>Do not impersonate anyone:</strong> Your username, profile picture, and bio must not mislead others into thinking you are a real person, celebrity, influencer, or official brand that you are not. Creating a profile designed to deceive others is a violation of these terms.</li>
+                <li><strong>Account transfers are not allowed:</strong> You cannot sell, gift, or transfer your account to another person. If you no longer want to use Luneya, you may request account deletion by contacting us.</li>
+            </ul>
+
+            <p>
+                Luneya reserves the right to suspend or terminate accounts that appear to be compromised, shared, or used in ways that violate these terms — even if the original account holder did not personally initiate those actions. If your account is ever used by someone else due to your own failure to keep it secure, you remain responsible for the consequences.
+            </p>
+
+        </section>
+
+        <section id="acceptable-use" class="policy-section">
+
+            <h2 class="t-h2">
+                Acceptable Use
+            </h2>
+
+            <p>
+                Luneya is a space for real expression, connection, and conversation among teenagers. To keep it that way, certain behaviours are not allowed on the platform. This section explains what is off-limits and why.
+            </p>
+
+            <ul>
+                <li><strong>No harassment or bullying:</strong> You may not target, intimidate, threaten, or repeatedly bother another user in ways that are unwanted or harmful. This includes sending hostile messages, spreading false information about someone, publicly humiliating others, or encouraging other users to pile on against a specific person.</li>
+                <li><strong>No spam:</strong> You may not send mass unsolicited messages, post the same content repeatedly, or use the platform to flood other users with irrelevant or promotional content. This includes automated or scripted activity.</li>
+                <li><strong>No scams or fraud:</strong> You may not deceive users for personal gain — whether through fake giveaways, phishing links, impersonation for financial purposes, or any other dishonest scheme.</li>
+                <li><strong>No impersonation:</strong> You may not pretend to be another person, whether a real individual or a fictional character, in a way that misleads others. Parody accounts that are clearly labelled as such are treated differently, but any profile designed to deceive is not permitted.</li>
+                <li><strong>No sexually explicit content:</strong> Luneya is built for teenagers. Any content that is sexually explicit, graphic, or that sexualises minors in any way is strictly prohibited and may be reported to law enforcement.</li>
+                <li><strong>No attempts to bypass safety measures:</strong> You may not reverse-engineer, disable, exploit, or attempt to work around any safety features, content filters, reporting systems, or restrictions on the platform. This includes using third-party tools or scripts to do so.</li>
+                <li><strong>No content that endangers others:</strong> You may not post, share, or promote content that encourages self-harm, eating disorders, substance abuse, or other behaviours that could put users at risk.</li>
+                <li><strong>No illegal activity:</strong> You may not use Luneya to facilitate any activity that is illegal under applicable law, including but not limited to sharing illegal content, coordinating criminal activity, or violating another person's intellectual property rights.</li>
+            </ul>
+
+            <p>
+                These rules are not exhaustive. Luneya may take action against any behaviour that it determines — in its reasonable judgement — to be harmful, disruptive, or contrary to the spirit of the platform, even if not explicitly listed here.
+            </p>
+
+        </section>
+
+        <section id="content" class="policy-section">
+
+            <h2 class="t-h2">
+                User Content
+            </h2>
+
+            <p>
+                Anything you write, post, or share on Luneya — including text posts, replies, profile information, and usernames — is referred to as "user content." Here is how ownership and permissions work.
+            </p>
+
+            <p>
+                <strong>You own your content.</strong> Creating something on Luneya does not transfer ownership to us. The words you write and ideas you share remain yours.
+            </p>
+
+            <p>
+                <strong>What you give us permission to do.</strong> By posting content on Luneya, you grant us a limited, non-exclusive licence to display, store, process, and distribute that content as necessary to operate the platform. For example, when you write a post, we need to store it on our servers and show it to other users — that requires this licence. This permission exists only for as long as the content is on the platform. If you delete your content, we will remove it from active display. Some residual copies may remain temporarily in backups, but these are not actively used.
+            </p>
+
+            <p>
+                <strong>We will not sell your content.</strong> Luneya does not sell your posts or personal content to advertisers, data brokers, or any third parties.
+            </p>
+
+            <p>
+                <strong>You are responsible for what you post.</strong> You confirm that any content you share does not violate anyone else's rights, does not contain false or defamatory statements, and complies with these Terms of Service and applicable law. If your content infringes on someone else's intellectual property, you may be held responsible.
+            </p>
+
+            <p>
+                <strong>Content we may remove.</strong> Luneya reserves the right to remove any content that violates these terms, is flagged by other users and reviewed by our team, or is otherwise deemed harmful to the community — without prior notice.
+            </p>
+
+        </section>
+
+        <section id="enforcement" class="policy-section">
+
+            <h2 class="t-h2">
+                Enforcement
+            </h2>
+
+            <p>
+                When users violate these Terms of Service, Luneya may take moderation action. The type of action depends on the nature and severity of the violation, and whether it is a first offence or a pattern of behaviour.
+            </p>
+
+            <ul>
+                <li><strong>Warnings:</strong> For minor or first-time violations, we may issue a warning that explains what went wrong and what behaviour is expected going forward. Warnings are noted on your account.</li>
+                <li><strong>Feature restrictions:</strong> We may temporarily or permanently restrict access to specific features — such as messaging, posting, or commenting — if those features are being misused.</li>
+                <li><strong>Temporary suspension:</strong> For more serious violations, your account may be suspended for a defined period. During a suspension, you will not be able to log in or access the platform. The suspension period depends on the severity of the violation.</li>
+                <li><strong>Permanent account removal:</strong> Repeated or severe violations may result in your account being permanently removed. This is irreversible, and any content associated with your account will be deleted.</li>
+            </ul>
+
+            <p>
+                <strong>Serious violations may lead to immediate action.</strong> Some behaviours — including but not limited to sharing content that sexualises minors, making credible threats of violence, or attempting to exploit the platform's systems — may result in immediate suspension or permanent removal without a prior warning.
+            </p>
+
+            <p>
+                <strong>Reporting to authorities.</strong> In cases where content or behaviour may constitute a criminal offence — particularly where child safety is involved — Luneya may report the matter to relevant law enforcement or child safety organisations.
+            </p>
+
+            <p>
+                <strong>Appeals.</strong> If you believe a moderation action was taken in error, you may contact us at <!-- TODO: placeholder email --> legal@luneya.app to request a review. We will consider appeals on a case-by-case basis, but cannot guarantee the reversal of any decision.
+            </p>
+
+        </section>
+
+        <section id="termination" class="policy-section">
+
+            <h2 class="t-h2">
+                Termination of Account
+            </h2>
+
+            <p>
+                You are free to stop using Luneya at any time. If you decide the platform is not for you, you can simply stop — or request a full account deletion, which will remove your profile, posts, and associated data from our systems. You can do this from account settings or by emailing us directly.
+            </p>
+
+            <p>
+                <strong>Account deletion requests.</strong> When you request deletion, we will remove your personal information and content from active systems within a reasonable period. Because Luneya is an independently run platform, deletions are handled manually — we aim to process requests within 7 days. You will receive a confirmation once it is done.
+            </p>
+
+            <p>
+                <strong>When Luneya may terminate an account.</strong> We may suspend or permanently terminate accounts in cases where:
+            </p>
+
+            <ul>
+                <li><strong>Terms of Service are violated:</strong> Accounts that repeatedly or seriously breach these terms — including the Acceptable Use rules — may be removed. This applies whether the violation is a single severe incident or a pattern of smaller ones.</li>
+                <li><strong>Safety risks are created:</strong> If an account poses a credible risk to the safety of other users or to the integrity of the platform — for example, through threats, harassment, or attempts to exploit other users — we may act quickly to suspend or remove it.</li>
+                <li><strong>False information was provided:</strong> If we determine that an account was created using false or misleading information — particularly regarding age — the account may be removed without prior warning.</li>
+                <li><strong>The user is no longer eligible:</strong> If a user ages out of the 13–17 eligibility window, their account may be reviewed and restricted or removed in accordance with our eligibility policy.</li>
+            </ul>
+
+            <p>
+                <strong>What happens to your data after termination.</strong> When an account is terminated — whether by you or by us — most of your data is removed from active systems. However, certain records may be retained for a limited period for legal, safety, or moderation purposes. For example, if an account was involved in a safety investigation or a report made by another user, relevant records may be kept as part of that process. This retention is not indefinite, and data is not used for any purpose beyond what is necessary.
+            </p>
+
+            <p>
+                <strong>Notification.</strong> Where possible, we will notify you of a termination decision and the reason behind it. In cases involving serious safety concerns or severe violations, we may act without prior notice.
+            </p>
+
+        </section>
+
+        <section id="changes" class="policy-section">
+
+            <h2 class="t-h2">
+                Changes To The Service
+            </h2>
+
+            <p>
+                Luneya is an evolving platform. As we learn what works and what doesn't, we will adjust, improve, and occasionally remove features. This section explains how we handle those changes.
+            </p>
+
+            <p>
+                <strong>Changes to features and functionality.</strong> Luneya may at any time add new features, modify existing ones, or discontinue parts of the platform. We will do our best to communicate significant changes in advance, but this is not always possible — for example, in cases where we need to act quickly for safety or legal reasons.
+            </p>
+
+            <p>
+                <strong>Changes to these terms.</strong> We may update these Terms of Service from time to time to reflect changes in the platform, applicable law, or how we operate. When we do, we will update the "Last updated" date at the top of this page. For significant changes that meaningfully affect your rights or how you use the platform, we will notify you through the platform — for example, via an in-app notice or message — before the changes take effect.
+            </p>
+
+            <p>
+                <strong>Your continued use means acceptance.</strong> If you continue to use Luneya after an update to these terms, you are agreeing to the updated version. If you do not agree with a change, you should stop using the platform and may request account deletion by contacting us.
+            </p>
+
+            <p>
+                <strong>Service availability.</strong> We aim to keep Luneya available and reliable, but we do not guarantee uninterrupted access. The platform may be temporarily unavailable due to maintenance, technical issues, or circumstances outside our control. Luneya is not liable for any loss resulting from downtime or service interruptions.
+            </p>
+
+        </section>
+
+        <section id="contact" class="policy-section">
+
+            <h2 class="t-h2">
+                Contact
+            </h2>
+
+            <p>
+                If you have questions about these terms, want to report a concern, or need to appeal a moderation decision, we want to hear from you.
+            </p>
+
+            <p>
+                The best way to reach us is by email:
+            </p>
+
+            <!-- TODO: placeholder email — replace once luneya.app domain is live -->
+            <p>
+                <strong>legal@luneya.app</strong>
+            </p>
+
+            <p>
+                We read every message and will do our best to respond within a reasonable time. If you are reporting a safety concern — especially anything involving harm to yourself or another user — please mark your subject line clearly so we can prioritise it.
+            </p>
+
+            <p>
+                If you are a parent or guardian with questions about your child's use of Luneya, or if you believe a minor is being harmed on the platform, please contact us at the same address. We take these concerns seriously and will act promptly.
+            </p>
+
+        </section>
+
+    </article>
+
+</div>
+
+       <div class="card card--raised guide-footer">
+            <p>
+                Good communities need clear expectations.
+            </p>
+
+            <span class="t-body" style="color: var(--ink-2);">
+                These terms exist to help keep Luneya safe, fair, and enjoyable for everyone.
+            </span>
+        </div>
+
+    </div>
+
+</main>
+
+<button id="scroll-top" aria-label="Scroll to top">
+    <span class="material-symbols-outlined">arrow_upward</span>
+</button>
+
+<script>
+const themeToggle = document.getElementById('theme-toggle');
+
+const savedTheme =
+    localStorage.getItem('theme') ||
+    (window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light');
+
+document.documentElement.setAttribute(
+    'data-theme',
+    savedTheme
+);
+
+themeToggle.addEventListener('click', () => {
+    const current =
+        document.documentElement.getAttribute('data-theme');
+
+    const next =
+        current === 'dark' ? 'light' : 'dark';
+
+    document.documentElement.setAttribute(
+        'data-theme',
+        next
+    );
+
+    localStorage.setItem('theme', next);
+});
+
+// Scroll-spy: highlight the nav link for the section currently in view
+(function () {
+    const navLinks = document.querySelectorAll('.policy-nav a');
+    const sections = Array.from(navLinks).map(link => {
+        const id = link.getAttribute('href').slice(1);
+        return document.getElementById(id);
+    }).filter(Boolean);
+
+    function onScroll() {
+        // Find the last section whose top edge is at or above the 30% viewport mark
+        const threshold = window.scrollY + window.innerHeight * 0.3;
+        let active = sections[0];
+
+        for (const section of sections) {
+            if (section.offsetTop <= threshold) {
+                active = section;
+            }
+        }
+
+        navLinks.forEach(link => {
+            const isActive = link.getAttribute('href') === '#' + active.id;
+            link.classList.toggle('active', isActive);
+        });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // run once on load
+})();
+
+// Scroll-to-top button
+const scrollBtn = document.getElementById('scroll-top');
+
+if (scrollBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollBtn.classList.add('visible');
+        } else {
+            scrollBtn.classList.remove('visible');
+        }
+    });
+
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+</script>
+
+</body>
+</html>

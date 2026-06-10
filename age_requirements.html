@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Requirements • Luneya</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .safety-page {
+            padding-top: 120px;
+            padding-bottom: 100px;
+        }
+
+        .guide-header {
+            margin-bottom: 60px;
+        }
+
+        .guide-header h1 {
+            margin-bottom: 18px;
+        }
+
+        .guide-header p {
+            color: var(--ink-2);
+            max-width: 650px;
+        }
+
+        .guide-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .guide-card {
+            padding: 32px;
+        }
+
+        .guide-card h2 {
+            margin-bottom: 14px;
+        }
+
+        .guide-card p {
+            color: var(--ink-2);
+            margin-bottom: 18px;
+        }
+
+        .guide-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .guide-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 14px;
+            background: var(--accent-subtle-2);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+
+        .guide-item .material-symbols-outlined {
+            color: var(--accent);
+        }
+
+        .guide-footer {
+            margin-top: 48px;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .guide-footer p:first-child {
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 40px;
+            text-decoration: none;
+            color: var(--ink-2);
+        }
+
+        .back-link:hover {
+            color: var(--ink);
+        }
+
+        .age-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 32px;
+        }
+
+        .age-status-card {
+            padding: 28px;
+            text-align: center;
+        }
+
+        .age-status-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .age-status-card .material-symbols-outlined {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .age-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav id="navbar" class="is-scrolled">
+    <div class="container nav-inner">
+        <a href="index.html" class="nav-logo">Luneya</a>
+
+        <div class="nav-actions">
+            <button id="theme-toggle">
+                <span class="toggle-icon moon material-symbols-outlined">dark_mode</span>
+                <span class="toggle-icon sun material-symbols-outlined">light_mode</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<main class="safety-page">
+
+    <div class="container--narrow">
+
+        <a href="index.html" class="back-link">
+            <span class="material-symbols-outlined">arrow_back</span>
+            Back to Luneya
+        </a>
+
+        <div class="guide-header">
+            <span class="section-label t-label">Age Requirements</span>
+
+            <h1 class="t-h1">
+                Luneya is built for teenagers.
+            </h1>
+
+                <p class="t-body-lg">
+                To help create a safer and more age-appropriate environment,
+                Luneya is currently available only to users between the ages of
+                13 and 17.
+                </p>
+        </div>
+
+        <div class="guide-grid">
+            <div class="guide-grid">
+                
+<div class="age-grid">
+<div class="card age-status-card">
+    <span class="material-symbols-outlined">
+        groups
+    </span>
+
+    <h3 class="t-h3">
+        Who Luneya is for
+    </h3>
+
+    <p class="t-body">
+        Teenagers aged 13–17.
+    </p>
+</div>
+
+<div class="card age-status-card">
+    <span class="material-symbols-outlined">
+        child_care
+    </span>
+
+    <h3 class="t-h3">
+        Under 13?
+    </h3>
+
+    <p class="t-body">
+        Luneya isn't available for children under 13.
+    </p>
+</div>
+
+<div class="card age-status-card">
+    <span class="material-symbols-outlined">
+        person
+    </span>
+
+    <h3 class="t-h3">
+        Over 17?
+    </h3>
+
+    <p class="t-body">
+        Luneya is currently designed only for teenagers.
+    </p>
+</div>
+
+</div>
+
+<div class="guide-grid">
+
+<div class="card guide-card">
+    <h2 class="t-h2">Why Do We Have Age Requirements?</h2>
+
+    <p class="t-body">
+        Age requirements help us create a safer and more appropriate
+        environment for everyone on Luneya.
+    </p>
+
+    <div class="guide-list">
+        <div class="guide-item">
+            <span class="material-symbols-outlined">shield</span>
+            Helps create age-appropriate conversations.
+        </div>
+
+        <div class="guide-item">
+            <span class="material-symbols-outlined">groups</span>
+            Connects users within a similar stage of life.
+        </div>
+
+        <div class="guide-item">
+            <span class="material-symbols-outlined">verified_user</span>
+            Supports platform safety efforts.
+        </div>
+    </div>
+</div>
+
+<div class="card guide-card">
+    <h2 class="t-h2">What If I Am Under 13?</h2>
+
+    <p class="t-body">
+        Luneya is not available to children under 13.
+    </p>
+
+    <div class="guide-list">
+        <div class="guide-item">
+            <span class="material-symbols-outlined">child_care</span>
+            Accounts belonging to users under 13 may be removed.
+        </div>
+
+        <div class="guide-item">
+            <span class="material-symbols-outlined">schedule</span>
+            You may join once you meet the minimum age requirement.
+        </div>
+    </div>
+</div>
+
+<div class="card guide-card">
+    <h2 class="t-h2">What Happens When I Turn 18?</h2>
+
+    <p class="t-body">
+        Luneya is designed specifically for teenagers.
+    </p>
+
+    <div class="guide-list">
+        <div class="guide-item">
+            <span class="material-symbols-outlined">cake</span>
+            Future policies may provide transition options.
+        </div>
+
+        <div class="guide-item">
+            <span class="material-symbols-outlined">info</span>
+            We will communicate any changes clearly.
+        </div>
+    </div>
+</div>
+
+<div class="card guide-card">
+    <h2 class="t-h2">Providing Accurate Information</h2>
+
+    <p class="t-body">
+        Please be honest about your age when creating an account.
+    </p>
+
+    <div class="guide-list">
+        <div class="guide-item">
+            <span class="material-symbols-outlined">fact_check</span>
+            False information may result in account action.
+        </div>
+
+        <div class="guide-item">
+            <span class="material-symbols-outlined">security</span>
+            Accurate information helps maintain community safety.
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div class="card card--raised guide-footer">
+    <p>
+        “Age requirements aren't about exclusion.”
+    </p>
+
+<span class="t-body" style="color: var(--ink-2);">
+    They're about creating an environment that feels appropriate, safe, and comfortable for the people it's designed for.
+</span>
+
+</main>
+
+<script>
+const themeToggle = document.getElementById('theme-toggle');
+
+const savedTheme =
+    localStorage.getItem('theme') ||
+    (window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light');
+
+document.documentElement.setAttribute(
+    'data-theme',
+    savedTheme
+);
+
+themeToggle.addEventListener('click', () => {
+    const current =
+        document.documentElement.getAttribute('data-theme');
+
+    const next =
+        current === 'dark' ? 'light' : 'dark';
+
+    document.documentElement.setAttribute(
+        'data-theme',
+        next
+    );
+
+    localStorage.setItem('theme', next);
+});
+</script>
+
+</body>
+</html>

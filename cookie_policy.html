@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy • Luneya</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .safety-page {
+            padding-top: 120px;
+            padding-bottom: 100px;
+        }
+
+        .guide-header {
+            margin-bottom: 60px;
+        }
+
+        .guide-header h1 {
+            margin-bottom: 18px;
+        }
+
+        .guide-header p {
+            color: var(--ink-2);
+            max-width: 650px;
+        }
+
+        .guide-footer {
+            margin-top: 48px;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .guide-footer p:first-child {
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 40px;
+            text-decoration: none;
+            color: var(--ink-2);
+        }
+
+        .back-link:hover {
+            color: var(--ink);
+        }
+
+        /* ── Layout shell ── */
+        .policy-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 64px;
+            align-items: start;
+        }
+
+        /* ── Left nav: sticky, stops at viewport top offset ── */
+        .policy-nav {
+            position: sticky;
+            top: 100px;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+            border-left: 1px solid var(--border);
+            padding-left: 20px;
+        }
+
+        .policy-nav a {
+            display: block;
+            margin-bottom: 14px;
+            text-decoration: none;
+            color: var(--ink-2);
+            font-size: 0.9rem;
+            transition: color 0.15s ease, padding-left 0.15s ease;
+        }
+
+        .policy-nav a:hover {
+            color: var(--ink);
+        }
+
+        .policy-nav a.active {
+            color: var(--accent);
+            padding-left: 8px;
+            border-left: 2px solid var(--accent);
+            margin-left: -21px;
+            font-weight: 500;
+        }
+
+        /* ── Right content ── */
+        .policy-content {
+            width: 100%;
+        }
+
+        .policy-section {
+            margin-bottom: 72px;
+        }
+
+        .policy-section p,
+        .policy-section li {
+            color: var(--ink-2);
+            line-height: 1.8;
+        }
+
+        .policy-section p + p {
+            margin-top: 20px;
+        }
+
+        .policy-section ul {
+            margin-top: 16px;
+            padding-left: 20px;
+        }
+
+        .policy-section li {
+            margin-bottom: 10px;
+        }
+
+        /* ── Wide screens ── */
+        @media (min-width: 1280px) {
+            .safety-page .container--narrow {
+                max-width: 1100px;
+                margin-inline: auto;
+                padding-inline: 40px;
+            }
+        }
+
+        /* ── Mobile: hide nav, full-width content ── */
+        @media (max-width: 900px) {
+            .policy-layout {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .policy-nav {
+                display: none;
+            }
+        }
+
+        /* ── Scroll-to-top button: mobile only ── */
+        #scroll-top {
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+            #scroll-top {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: fixed;
+                bottom: 28px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                background: var(--accent);
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(8px);
+                transition: opacity 0.2s ease, transform 0.2s ease;
+                z-index: 999;
+            }
+
+            #scroll-top.visible {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translateY(0);
+            }
+
+            #scroll-top .material-symbols-outlined {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav id="navbar" class="is-scrolled">
+    <div class="container nav-inner">
+        <a href="index.html" class="nav-logo">Luneya</a>
+
+        <div class="nav-actions">
+            <button id="theme-toggle">
+                <span class="toggle-icon moon material-symbols-outlined">dark_mode</span>
+                <span class="toggle-icon sun material-symbols-outlined">light_mode</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<main class="safety-page">
+
+    <div class="container--narrow">
+
+        <a href="index.html" class="back-link">
+            <span class="material-symbols-outlined">arrow_back</span>
+            Back to Luneya
+        </a>
+
+        <div class="guide-header">
+            <span class="section-label t-label">Cookie Policy</span>
+
+            <h1 class="t-h1">
+                How Luneya uses cookies.
+            </h1>
+
+            <p class="t-body-lg">
+                This page explains what cookies are, why we use them,
+                and what choices you have regarding them.
+            </p>
+
+            <p class="t-body" style="margin-top:16px;">
+                Last updated: June 2026
+            </p>
+        </div>
+
+        <div class="policy-layout">
+
+    <aside class="policy-nav">
+
+        <a href="#what">What Are Cookies?</a>
+        <a href="#why">Why We Use Them</a>
+        <a href="#types">Types Of Cookies</a>
+        <a href="#choices">Your Choices</a>
+        <a href="#contact">Contact</a>
+
+    </aside>
+
+    <article class="policy-content">
+
+        <section id="what" class="policy-section">
+
+            <h2 class="t-h2">
+                What Are Cookies?
+            </h2>
+
+            <p>
+                Cookies are small text files that a website saves on your device when you visit. They are used to remember things about you — like whether you are logged in, or what settings you have chosen — so you do not have to reconfigure things every time you open the page.
+            </p>
+
+            <p>
+                Think of them as the website's way of leaving a short note for itself on your device. The note might say something like "this person prefers dark mode" or "this person is already signed in." The next time you visit, the site reads that note and picks up where it left off.
+            </p>
+
+            <p>
+                Cookies are not programs. They cannot run code or do anything on your device beyond storing small pieces of text. They are a standard part of how the web works.
+            </p>
+
+        </section>
+
+        <section id="why" class="policy-section">
+
+            <h2 class="t-h2">
+                Why We Use Them
+            </h2>
+
+            <p>
+                Luneya uses cookies for a small number of specific reasons. We keep this list short on purpose — we only use what is genuinely necessary to make the platform work well for you.
+            </p>
+
+            <p>
+                <strong>To keep you logged in.</strong> Without cookies, you would have to log in again every single time you opened Luneya. A session cookie remembers that you are already authenticated so the platform can let you straight in.
+            </p>
+
+            <p>
+                <strong>To remember your preferences.</strong> If you switch to light mode, we save that choice. Your theme preference is stored so it persists across visits, without you needing to change it every time.
+            </p>
+
+            <p>
+                <strong>To understand how the platform is being used.</strong> We may use analytics cookies in the future to understand things like which features people find most useful or where the app feels confusing. This helps us make Luneya better. More on this in the next section.
+            </p>
+
+        </section>
+
+        <section id="types" class="policy-section">
+
+            <h2 class="t-h2">
+                Types Of Cookies
+            </h2>
+
+            <p>
+                Here is a clear breakdown of the cookie categories we use or may use on Luneya.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Essential Cookies.</strong> These are required for the platform to work. They handle things like keeping you logged into your account during a session. Without them, basic features simply would not function. You cannot opt out of essential cookies while continuing to use Luneya — but they are kept as minimal as possible.
+                </li>
+                <li>
+                    <strong>Preference Cookies.</strong> These remember choices you have made — right now, primarily your light/dark theme setting. They are stored in your browser so your preferred experience is restored the next time you visit. No personal information is contained in these cookies.
+                </li>
+                <li>
+                    <strong>Analytics Cookies.</strong> Luneya does not currently use analytics cookies. We may introduce them in the future to understand how the platform is being used — for example, which parts are visited most, or where users tend to drop off. If and when we do introduce analytics, we will update this page and communicate the change through the platform. Any analytics we use will be privacy-respecting and will not be used to build profiles or target advertising.
+                </li>
+            </ul>
+
+            <p>
+                We do not use advertising cookies. We do not use tracking cookies that follow you across other websites. The cookies on Luneya stay on Luneya.
+            </p>
+
+        </section>
+
+        <section id="choices" class="policy-section">
+
+            <h2 class="t-h2">
+                Your Choices
+            </h2>
+
+            <p>
+                You have control over cookies through your browser settings. Every major browser lets you view, block, or delete cookies. Here is how to find those settings in the most common ones:
+            </p>
+
+            <ul>
+                <li><strong>Chrome:</strong> Settings → Privacy and security → Cookies and other site data.</li>
+                <li><strong>Firefox:</strong> Settings → Privacy &amp; Security → Cookies and Site Data.</li>
+                <li><strong>Safari:</strong> Settings → Safari → Privacy → Manage Website Data.</li>
+                <li><strong>Edge:</strong> Settings → Cookies and site permissions → Cookies and site data.</li>
+            </ul>
+
+            <p>
+                You can also use your browser's private or incognito mode — cookies set during a private session are deleted automatically when you close the window.
+            </p>
+
+            <p>
+                Keep in mind that blocking all cookies will affect how Luneya works. Essential cookies — like the one that keeps you logged in — are required for the platform to function. If you block them, you may not be able to stay signed in or use certain features.
+            </p>
+
+            <p>
+                If you want to remove only Luneya's cookies, you can do that from your browser's site-specific cookie settings without affecting cookies from other websites.
+            </p>
+
+        </section>
+
+        <section id="contact" class="policy-section">
+
+            <h2 class="t-h2">
+                Contact
+            </h2>
+
+            <p>
+                If you have questions about how Luneya uses cookies, or anything else on this page, you can reach us directly.
+            </p>
+
+            <p>
+                <!-- TODO: placeholder email — replace once luneya.app domain is live -->
+                <strong>legal@luneya.app</strong>
+            </p>
+
+            <p>
+                We aim to respond to all questions within a few business days.
+            </p>
+
+        </section>
+
+    </article>
+
+</div>
+
+        <div class="card card--raised guide-footer">
+            <p>
+                Cookies shouldn't be a mystery.
+            </p>
+
+            <span class="t-body" style="color: var(--ink-2);">
+                We keep our cookie use minimal, transparent, and never tied to advertising.
+            </span>
+        </div>
+
+    </div>
+
+</main>
+
+<button id="scroll-top" aria-label="Scroll to top">
+    <span class="material-symbols-outlined">arrow_upward</span>
+</button>
+
+<script>
+const themeToggle = document.getElementById('theme-toggle');
+
+const savedTheme =
+    localStorage.getItem('theme') ||
+    (window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light');
+
+document.documentElement.setAttribute(
+    'data-theme',
+    savedTheme
+);
+
+themeToggle.addEventListener('click', () => {
+    const current =
+        document.documentElement.getAttribute('data-theme');
+
+    const next =
+        current === 'dark' ? 'light' : 'dark';
+
+    document.documentElement.setAttribute(
+        'data-theme',
+        next
+    );
+
+    localStorage.setItem('theme', next);
+});
+
+// Scroll-spy: highlight the nav link for the section currently in view
+(function () {
+    const navLinks = document.querySelectorAll('.policy-nav a');
+    const sections = Array.from(navLinks).map(link => {
+        const id = link.getAttribute('href').slice(1);
+        return document.getElementById(id);
+    }).filter(Boolean);
+
+    function onScroll() {
+        // Find the last section whose top edge is at or above the 30% viewport mark
+        const threshold = window.scrollY + window.innerHeight * 0.3;
+        let active = sections[0];
+
+        for (const section of sections) {
+            if (section.offsetTop <= threshold) {
+                active = section;
+            }
+        }
+
+        navLinks.forEach(link => {
+            const isActive = link.getAttribute('href') === '#' + active.id;
+            link.classList.toggle('active', isActive);
+        });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // run once on load
+})();
+
+// Scroll-to-top button
+const scrollBtn = document.getElementById('scroll-top');
+
+if (scrollBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollBtn.classList.add('visible');
+        } else {
+            scrollBtn.classList.remove('visible');
+        }
+    });
+
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+</script>
+
+</body>
+</html>

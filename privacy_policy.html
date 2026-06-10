@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy • Luneya</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .safety-page {
+            padding-top: 120px;
+            padding-bottom: 100px;
+        }
+
+        .guide-header {
+            margin-bottom: 60px;
+        }
+
+        .guide-header h1 {
+            margin-bottom: 18px;
+        }
+
+        .guide-header p {
+            color: var(--ink-2);
+            max-width: 650px;
+        }
+
+        .guide-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .guide-card {
+            padding: 32px;
+        }
+
+        .guide-card h2 {
+            margin-bottom: 14px;
+        }
+
+        .guide-card p {
+            color: var(--ink-2);
+            margin-bottom: 18px;
+        }
+
+        .guide-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .guide-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 14px;
+            background: var(--accent-subtle-2);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+
+        .guide-item .material-symbols-outlined {
+            color: var(--accent);
+        }
+
+        .guide-footer {
+            margin-top: 48px;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .guide-footer p:first-child {
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 40px;
+            text-decoration: none;
+            color: var(--ink-2);
+        }
+
+        .back-link:hover {
+            color: var(--ink);
+        }
+
+        /* ── Layout shell ── */
+        .policy-layout {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 64px;
+            /* The grid itself doesn't scroll — children handle their own overflow */
+            align-items: start;
+        }
+
+        /* ── Left nav: sticky, stops at viewport top offset ── */
+        .policy-nav {
+            position: sticky;
+            top: 100px;                 /* sits just below the navbar */
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+            border-left: 1px solid var(--border);
+            padding-left: 20px;
+        }
+
+        .policy-nav a {
+            display: block;
+            margin-bottom: 14px;
+            text-decoration: none;
+            color: var(--ink-2);
+            font-size: 0.9rem;
+            transition: color 0.15s ease, padding-left 0.15s ease;
+        }
+
+        .policy-nav a:hover {
+            color: var(--ink);
+        }
+
+        .policy-nav a.active {
+            color: var(--accent);
+            padding-left: 8px;
+            border-left: 2px solid var(--accent);
+            margin-left: -21px;
+            font-weight: 500;
+        }
+
+        /* ── Right content: scrolls normally with the page ── */
+        .policy-content {
+            /* No max-width cap — let it use the full remaining column */
+            width: 100%;
+        }
+
+        .policy-section {
+            margin-bottom: 72px;
+        }
+
+        .policy-section p,
+        .policy-section li {
+            color: var(--ink-2);
+            line-height: 1.8;
+        }
+
+        /* paragraph breathing room — replaces the <br> tags */
+        .policy-section p + p {
+            margin-top: 20px;
+        }
+
+        .policy-section ul {
+            margin-top: 16px;
+            padding-left: 20px;
+        }
+
+        .policy-section li {
+            margin-bottom: 10px;
+        }
+
+        /* ── Wide screens: expand the outer container ── */
+        @media (min-width: 1280px) {
+            .safety-page .container--narrow {
+                max-width: 1100px;
+                margin-inline: auto;
+                padding-inline: 40px;
+            }
+        }
+
+        /* ── Mobile: hide nav, full-width content ── */
+        @media (max-width: 900px) {
+            .policy-layout {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .policy-nav {
+                display: none;
+            }
+        }
+
+        /* ── Scroll-to-top button: mobile only ── */
+        #scroll-top {
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+            #scroll-top {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: fixed;
+                bottom: 28px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                background: var(--accent);
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(8px);
+                transition: opacity 0.2s ease, transform 0.2s ease;
+                z-index: 999;
+            }
+
+            #scroll-top.visible {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translateY(0);
+            }
+
+            #scroll-top .material-symbols-outlined {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav id="navbar" class="is-scrolled">
+    <div class="container nav-inner">
+        <a href="index.html" class="nav-logo">Luneya</a>
+
+        <div class="nav-actions">
+            <button id="theme-toggle">
+                <span class="toggle-icon moon material-symbols-outlined">dark_mode</span>
+                <span class="toggle-icon sun material-symbols-outlined">light_mode</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<main class="safety-page">
+
+    <div class="container--narrow">
+
+        <a href="index.html" class="back-link">
+            <span class="material-symbols-outlined">arrow_back</span>
+            Back to Luneya
+        </a>
+
+        <div class="guide-header">
+            <span class="section-label t-label">Privacy Policy</span>
+
+            <h1 class="t-h1">
+                Your privacy matters.
+            </h1>
+
+            <p class="t-body-lg">
+                This page explains what information we collect,
+                why we collect it, and how we use it.
+            </p>
+
+            <p class="t-body" style="margin-top:16px;">
+                Last updated: June 2026
+            </p>
+        </div>
+
+        <div class="policy-layout">
+
+    <aside class="policy-nav">
+
+        <a href="#collect">What We Collect</a>
+        <a href="#use">How We Use It</a>
+        <a href="#security">Security</a>
+        <a href="#sharing">Sharing Information</a>
+        <a href="#choices">Your Choices</a>
+        <a href="#contact">Contact</a>
+
+    </aside>
+
+    <article class="policy-content">
+
+        <section id="collect" class="policy-section">
+            <h2 class="t-h2">What Information We Collect</h2>
+
+            <p>
+                When you sign up and use Luneya, we collect some basic information to make the platform work. Here's exactly what that includes and why each piece matters.
+            </p>
+
+            <ul>
+                <li><strong>Email address</strong> — used to create your account, send you important updates (like password resets), and contact you if there's an issue with your account. We don't use it to send marketing emails.</li>
+                <li><strong>Username</strong> — this is your public name on Luneya. It's what other users see. You choose it, and you can change it later.</li>
+                <li><strong>Age range</strong> — we ask for your age range (not your exact birthday) to keep Luneya safe and age-appropriate. Luneya is built for ages 13–17, and this helps us maintain that.</li>
+                <li><strong>Interests and profile information</strong> — things like topics you care about, a short bio, or other details you choose to add to your profile. This is optional, and you decide what to share.</li>
+                <li><strong>Messages sent through the platform</strong> — the text you write and send to others on Luneya. Messages are stored so the platform can deliver them. We only review message content in specific circumstances, like when a report is made about a conversation.</li>
+                <li><strong>Basic device and usage information</strong> — things like what browser or device you're using, and general patterns of how the app is being used (e.g., which features are used most). This helps us fix bugs and make the app faster. It is not used to build a profile of you personally.</li>
+            </ul>
+
+            <p>
+                We only ask for what we actually need. We don't ask for your full name, phone number, location, or school.
+            </p>
+        </section>
+
+        <section id="use" class="policy-section">
+            <h2 class="t-h2">How We Use Information</h2>
+
+            <p>
+                The information we collect is used to run Luneya and keep it safe. Nothing more. Here's a clear breakdown of what that looks like in practice.
+            </p>
+
+            <ul>
+                <li><strong>Create and manage accounts</strong> — your email and username are used to set up your account, let you log in, and let you recover access if you forget your password.</li>
+                <li><strong>Match users based on interests</strong> — the interests you add to your profile help us connect you with people who share similar things they care about. You're in control of what interests you add, and you can update or remove them at any time.</li>
+                <li><strong>Provide messaging features</strong> — your messages are stored so the platform can deliver them to the other person. We do not read conversations unless we are investigating a specific report.</li>
+                <li><strong>Maintain platform safety</strong> — we use account information and usage patterns to identify behavior that violates our community guidelines, such as harassment, spam, or attempts to contact minors inappropriately.</li>
+                <li><strong>Investigate reports and abuse</strong> — when a user reports a conversation or account, we may review relevant information (including messages in that conversation) to understand what happened and take appropriate action.</li>
+                <li><strong>Improve performance and reliability</strong> — device and usage information helps us identify when something is broken, slow, or confusing, so we can fix it.</li>
+            </ul>
+
+            <p>
+                We do not use your information for advertising. We do not build behavioral profiles. We do not sell data to analytics companies.
+            </p>
+        </section>
+
+        <section id="security" class="policy-section">
+            <h2 class="t-h2">Data Storage & Security</h2>
+
+            <p>
+                We take the security of your information seriously, especially because Luneya is built for teenagers. Here's how we approach it.
+            </p>
+
+            <p>
+                <strong>Where data is stored:</strong> Luneya uses Firebase, a platform made by Google, to store account data and messages. Firebase provides industry-standard security infrastructure, including encrypted data storage and secure network connections (HTTPS) between your device and our servers.
+            </p>
+
+            <p>
+                <strong>Who can access your data:</strong> Access to user data is strictly limited. Only core members of the Luneya team can access stored data, and only when it's necessary — for example, to investigate a safety report. We do not have open access to read through conversations casually.
+            </p>
+
+            <p>
+                <strong>How long we keep data:</strong> We keep your data for as long as your account is active. If you delete your account, we remove your personal information from our systems within a reasonable period. Some records may be retained for a short time for legal or safety reasons (for example, if an account was involved in a safety investigation).
+            </p>
+
+            <p>
+                <strong>Honest note on security:</strong> No online platform can guarantee that data is 100% secure against all possible attacks. What we can promise is that we take it seriously, use trusted infrastructure, and will notify you promptly if there is ever a breach that affects your account.
+            </p>
+        </section>
+
+        <section id="sharing" class="policy-section">
+            <h2 class="t-h2">Sharing Information</h2>
+
+            <p>
+                We do not sell your personal information. Full stop. Here's a clear picture of when information might be shared with anyone outside of Luneya.
+            </p>
+
+            <ul>
+                <li><strong>Infrastructure providers</strong> — your data is stored using Firebase (Google). This means Google's servers hold the data, but they are contractually required to protect it and cannot use it for their own purposes. This is standard practice for almost every app you use.</li>
+                <li><strong>Legal requirements</strong> — if we receive a valid legal request from law enforcement (such as a court order or subpoena), we may be required to share specific information. We will only do so when legally compelled, and we'll push back on requests we believe are overly broad.</li>
+                <li><strong>Safety situations</strong> — if we have a genuine reason to believe that someone's safety is at risk — for example, a user expressing intent to harm themselves or others — we may share relevant information with appropriate authorities or emergency services. We take this seriously and do not use it lightly.</li>
+                <li><strong>With your consent</strong> — if in the future we ever want to share your data for any other reason, we would ask for your explicit permission first. We'd never do it quietly.</li>
+            </ul>
+
+            <p>
+                We do not share your information with advertisers, data brokers, marketing companies, or other social platforms.
+            </p>
+        </section>
+
+        <section id="choices" class="policy-section">
+            <h2 class="t-h2">Your Choices</h2>
+
+            <p>
+                You have real control over your information on Luneya. Here's what you can do at any time.
+            </p>
+
+            <ul>
+                <li><strong>Update your profile</strong> — you can change your username, interests, bio, and other profile details from your account settings whenever you like.</li>
+                <li><strong>Change account settings</strong> — you can adjust your privacy preferences, notification settings, and other options from within the app.</li>
+                <li><strong>Delete your account</strong> — if you want to leave Luneya, you can request full account deletion. This will remove your profile, messages, and associated data from our systems. You can do this from account settings or by emailing us.</li>
+                <li><strong>Ask what we have</strong> — you can contact us to ask what information we hold about your account. We'll tell you clearly and honestly.</li>
+                <li><strong>Raise a privacy concern</strong> — if something about how we handle data doesn't feel right to you, please reach out. We take these concerns seriously and will respond.</li>
+            </ul>
+
+            <p>
+                If you are under 18, a parent or guardian can also contact us on your behalf regarding your account or data.
+            </p>
+        </section>
+
+        <section id="contact" class="policy-section">
+            <h2 class="t-h2">Contact Us</h2>
+
+            <p>
+                If you have any questions about this privacy policy, want to know what data we hold about you, or need to make a request about your account, you can reach us directly.
+            </p>
+
+            <p>
+                <strong>Email:</strong> <a href="mailto:privacy@luneya.app" style="color: var(--accent);">privacy@luneya.app</a>
+            </p>
+
+            <p>
+                We aim to respond to all privacy-related questions within 5 business days. If you're reporting an urgent safety concern, please say so in your message and we will prioritize it.
+            </p>
+
+            <p>
+                Luneya is an independently built platform. When you email us, you're reaching a real person — not a support bot or a ticketing system.
+            </p>
+        </section>
+
+    </article>
+
+</div>
+
+       <div class="card card--raised guide-footer">
+            <p>
+                Privacy should be understandable.
+            </p>
+
+            <span class="t-body" style="color: var(--ink-2);">
+                We aim to be transparent about what we collect, why we collect it, and how it is used.
+            </span>
+        </div>
+
+    </div>
+
+</main>
+
+<button id="scroll-top" aria-label="Scroll to top">
+    <span class="material-symbols-outlined">arrow_upward</span>
+</button>
+
+<script>
+const themeToggle = document.getElementById('theme-toggle');
+
+const savedTheme =
+    localStorage.getItem('theme') ||
+    (window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light');
+
+document.documentElement.setAttribute(
+    'data-theme',
+    savedTheme
+);
+
+themeToggle.addEventListener('click', () => {
+    const current =
+        document.documentElement.getAttribute('data-theme');
+
+    const next =
+        current === 'dark' ? 'light' : 'dark';
+
+    document.documentElement.setAttribute(
+        'data-theme',
+        next
+    );
+
+    localStorage.setItem('theme', next);
+});
+
+// Scroll-spy: highlight the nav link for the section currently in view
+(function () {
+    const navLinks = document.querySelectorAll('.policy-nav a');
+    const sections = Array.from(navLinks).map(link => {
+        const id = link.getAttribute('href').slice(1);
+        return document.getElementById(id);
+    }).filter(Boolean);
+
+    function onScroll() {
+        const threshold = window.scrollY + window.innerHeight * 0.3;
+        let active = sections[0];
+
+        for (const section of sections) {
+            if (section.offsetTop <= threshold) {
+                active = section;
+            }
+        }
+
+        navLinks.forEach(link => {
+            const isActive = link.getAttribute('href') === '#' + active.id;
+            link.classList.toggle('active', isActive);
+        });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+})();
+
+// Scroll-to-top button
+const scrollBtn = document.getElementById('scroll-top');
+
+if (scrollBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollBtn.classList.add('visible');
+        } else {
+            scrollBtn.classList.remove('visible');
+        }
+    });
+
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+</script>
+
+</body>
+</html>

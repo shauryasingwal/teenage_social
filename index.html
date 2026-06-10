@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Luneya is a calm, text-first social platform for teenagers aged 13-17. Connect over shared interests, one meaningful conversation at a time." />
+  <meta name="theme-color" content="#0f0e14" />
+  <title>Luneya — Where Teens Connect Meaningfully</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">Luneya</a>
+
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#safety">Safety</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" type="button" aria-label="Toggle theme">
+            <span class="toggle-icon sun">
+              <span class="material-symbols-outlined" style="font-size:17px">light_mode</span>
+            </span>
+            <span class="toggle-icon moon">
+              <span class="material-symbols-outlined" style="font-size:17px">dark_mode</span>
+            </span>
+          </button>
+
+          <a href="#" id="nav-login" class="t-caption" style="display:none">Log In</a>
+          <a href="#cta" class="btn btn-primary btn-sm">Join Beta</a>
+
+          <!-- Mobile hamburger -->
+          <button class="mobile-menu-btn" id="mobile-menu-btn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+            <span class="material-symbols-outlined" style="font-size:18px">menu</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile dropdown -->
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#safety">Safety</a>
+      <a href="#about">About</a>
+      <div style="padding:10px 24px 0;display:flex;flex-direction:column;gap:8px;">
+        <a href="#cta" class="btn btn-primary" style="justify-content:center;width:100%;">Join Beta</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ============================================================
+     HERO
+     ============================================================ -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-inner">
+
+        <!-- Headline -->
+        <h1 class="t-display fade-up d1">
+          Less noise.<br>More meaning.
+        </h1>
+
+        <p class="t-body-lg hero-sub fade-up d2">
+          Luneya is a calm social space built for teenagers — where you connect over real shared interests,
+          have one meaningful text conversation at a time, and actually feel heard.
+        </p>
+
+        <!-- Email CTA form -->
+        <div class="fade-up d3">
+          <form class="hero-form-wrap">
+            <input type="email" placeholder="your@email.com" aria-label="Email address" required />
+            <button type="submit" class="btn btn-primary">
+              Request invite
+            </button>
+          </form>
+          <p class="t-caption hero-form-note" style="margin-top:10px;">
+            No spam. One email when your spot is ready.
+          </p>
+
+          <!-- Secondary CTAs -->
+          <div class="hero-cta-row">
+            <a href="#how-it-works" class="btn btn-ghost">See How It Works</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat Window Visual (Version B) -->
+      <div class="hero-visual fade-up d4">
+        <div class="chat-window">
+          <!-- Browser chrome -->
+          <div class="chat-chrome">
+            <div class="chrome-dots">
+              <div class="chrome-dot"></div>
+              <div class="chrome-dot"></div>
+              <div class="chrome-dot"></div>
+            </div>
+            <div class="chrome-title t-caption">Amit Jaiswal · 16 · Film Photography, Indie Music</div>
+            <div class="chrome-status t-caption">
+              <div class="status-dot"></div>
+              active
+            </div>
+          </div>
+
+          <!-- Messages -->
+          <div class="chat-messages">
+            <div class="chat-timestamp">Today, 9:41 PM</div>
+
+            <div class="chat-msg-group chat-msg-group--them">
+              <span class="chat-sender">Amit</span>
+              <div class="bubble bubble--them">Have you tried shooting during golden hour? The film look is unreal lately.</div>
+            </div>
+
+            <div class="chat-msg-group chat-msg-group--me">
+              <div class="bubble bubble--me">Just started this week. My last roll came out better than anything I've shot digital.</div>
+            </div>
+
+            <div class="chat-msg-group chat-msg-group--them">
+              <div class="bubble bubble--them">That's the magic — it forces you to slow down and actually think before each frame.</div>
+            </div>
+
+            <div class="chat-msg-group chat-msg-group--me">
+              <div class="bubble bubble--me">Exactly. I have a whole roll from last weekend I haven't developed yet. Kind of scared to look.</div>
+            </div>
+
+            <div class="chat-msg-group chat-msg-group--them">
+              <div class="bubble bubble--them">That feeling is the best part honestly. The uncertainty.</div>
+            </div>
+          </div>
+
+          <!-- Input row -->
+          <div class="chat-input-row">
+            <div class="chat-input-fake">Write a message…</div>
+            <button class="chat-send-btn" aria-label="Send message">
+              <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ============================================================
+     FEATURES
+     ============================================================ -->
+  <section id="features">
+    <div class="container">
+      <div class="reveal" style="margin-bottom:56px;">
+        <p class="t-label section-label">Platform Features</p>
+        <h2 class="t-h1">Thoughtfully built,<br>for how teens really connect</h2>
+        <p class="t-body" style="color:var(--ink-2);max-width:52ch;margin-top:12px;">
+          We stripped away everything that makes social media exhausting — and kept only what makes genuine connection possible.
+        </p>
+      </div>
+
+      <div class="features-grid">
+
+        <!-- 1. Interest Matching (wide) -->
+        <div class="card feature-card wide reveal">
+          <div class="feat-icon">
+            <span class="material-symbols-outlined icon-fill" style="font-size:20px">interests</span>
+          </div>
+          <h3 class="t-h3">Interest-Based Matching</h3>
+          <p>You choose your passions — music, art, coding, sports, books, anime, anything. Luneya finds someone who shares them. No swiping, no photos, no engagement-chasing feed trying to keep you scrolling.</p>
+          <div class="chips">
+            <span class="chip">Indie Music</span>
+            <span class="chip">Film Photography</span>
+            <span class="chip">Creative Writing</span>
+            <span class="chip">Indie Games</span>
+            <span class="chip">Environment</span>
+            <span class="chip">Astronomy</span>
+          </div>
+        </div>
+
+        <!-- 2. No public profiles -->
+        <div class="card feature-card reveal" style="transition-delay:0.06s">
+          <div class="feat-icon">
+            <span class="material-symbols-outlined icon-fill" style="font-size:20px">visibility_off</span>
+          </div>
+          <h3 class="t-h3">No Public Profiles</h3>
+          <p>Your profile is invisible until you match. No strangers browsing your information. Privacy is the default — not a setting you have to find.</p>
+          <div class="safety-checks">
+            <div class="safety-check">
+              <span class="material-symbols-outlined icon-fill">check_circle</span>
+              Hidden from search engines
+            </div>
+            <div class="safety-check">
+              <span class="material-symbols-outlined icon-fill">check_circle</span>
+              No public-facing profile page
+            </div>
+            <div class="safety-check">
+              <span class="material-symbols-outlined icon-fill">check_circle</span>
+              Visible only to your match
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. One conversation -->
+        <div class="card feature-card reveal" style="transition-delay:0.12s">
+          <div class="feat-icon">
+            <span class="material-symbols-outlined icon-fill" style="font-size:20px">chat_bubble</span>
+          </div>
+          <h3 class="t-h3">One Chat at a Time</h3>
+          <p>No inbox chaos. One meaningful connection gets your full attention — and you, theirs. Quality over quantity. That's how real friendships actually form.</p>
+          <div class="one-chat-visual">
+            <div class="avatar-row">
+              <div class="mini-avatar"></div>
+              <div class="placeholder-text"></div>
+            </div>
+            <span class="material-symbols-outlined" style="font-size:16px;color:var(--ink-3)">lock</span>
+          </div>
+        </div>
+
+        <!-- 4. No image sharing -->
+        <div class="card feature-card reveal" style="transition-delay:0.18s">
+          <div class="feat-icon">
+            <span class="material-symbols-outlined icon-fill" style="font-size:20px">hide_image</span>
+          </div>
+          <h3 class="t-h3">No Image Sharing</h3>
+          <p>Connections happen through words and ideas. No photos or videos can be sent in chat — eliminating a major vector for pressure and harm.</p>
+          <div class="chips" style="margin-top:14px">
+            <span class="chip">Words only</span>
+            <span class="chip">Zero pressure</span>
+          </div>
+        </div>
+
+        <!-- 5. Handle sharing control -->
+        <div class="card feature-card reveal" style="transition-delay:0.24s">
+          <div class="feat-icon">
+            <span class="material-symbols-outlined icon-fill" style="font-size:20px">manage_accounts</span>
+          </div>
+          <h3 class="t-h3">You Control Handle Sharing</h3>
+          <p>Want to continue the friendship somewhere else? You decide if and when to share your social handles — it's never shown automatically.</p>
+        </div>
+
+        <!-- 6. Built for teens (full width) -->
+        <div class="card feature-card full reveal" style="text-align:center;transition-delay:0.06s">
+          <div class="feat-icon" style="margin:0 auto 18px">
+            <span class="material-symbols-outlined icon-fill" style="font-size:20px">family_restroom</span>
+          </div>
+          <h3 class="t-h3">Designed Specifically for Teens</h3>
+          <p style="max-width:600px;margin:10px auto 0">
+            Luneya isn't a generic social app with age settings bolted on. Every feature, every design decision, every
+            policy was built with a 15-year-old in mind — fewer interactions, slower pace, and the space to actually
+            think before you reply.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ============================================================
+     HOW IT WORKS — Version B layout (numbered rows, narrow)
+     ============================================================ -->
+  <section id="how-it-works">
+    <div class="container--narrow">
+      <div class="reveal" style="margin-bottom:0">
+        <p class="t-label section-label">Getting Started</p>
+        <h2 class="t-h1" style="margin-bottom:56px">Three simple steps<br>to a real connection</h2>
+      </div>
+
+      <div class="steps-list">
+        <div class="step-row reveal">
+          <div>
+            <span class="step-num-label">01</span>
+          </div>
+          <div class="step-body">
+            <h3 class="t-h3">Create Your Profile</h3>
+            <p class="t-body" style="color:var(--ink-2);margin-top:8px;">
+              Choose a username, enter your age for age-aware matching, and select 5–10 genuine interests.
+              No real name needed. No photo required. Your identity is yours to protect.
+            </p>
+          </div>
+        </div>
+
+        <div class="step-row reveal" style="transition-delay:0.1s">
+          <div>
+            <span class="step-num-label">02</span>
+          </div>
+          <div class="step-body">
+            <h3 class="t-h3">Match on Shared Interests</h3>
+            <p class="t-body" style="color:var(--ink-2);margin-top:8px;">
+              Luneya finds someone in your age range who shares at least three of your interests.
+              No browsing strangers. No swiping. A thoughtful match — not a feed.
+            </p>
+          </div>
+        </div>
+
+        <div class="step-row reveal" style="transition-delay:0.2s">
+          <div>
+            <span class="step-num-label">03</span>
+          </div>
+          <div class="step-body">
+            <h3 class="t-h3">Build One Real Conversation</h3>
+            <p class="t-body" style="color:var(--ink-2);margin-top:8px;">
+              You get one active chat. Put your whole self into it. If it clicks, you can choose to share
+              how to stay in touch. If not, you can end it and match again. No pressure.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div style="border-top:1px solid var(--border)"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ============================================================
+     SAFETY
+     ============================================================ -->
+  <section id="safety">
+    <div class="container">
+      <!-- Section header -->
+      <div class="safety-header reveal">
+        <p class="t-label section-label">Thoughtfully Designed</p>
+        <h2 class="t-h1">Built to feel genuinely safe</h2>
+        <p class="t-body-lg intro" style="margin-top:12px;">
+          Luneya was designed from the ground up with one question: what would help teens feel genuinely safe — and free to be themselves?
+        </p>
+      </div>
+
+      <div class="safety-grid">
+        <!-- Left: main content -->
+        <div class="card safety-main reveal">
+          <div class="safety-list">
+            <div class="safety-item">
+              <div class="safety-item-icon">
+                <span class="material-symbols-outlined icon-fill" style="font-size:16px">report</span>
+              </div>
+              <div class="safety-item-content">
+                <h4>Easy One-Tap Reporting</h4>
+                <p>Any message can be reported instantly. Every report is reviewed by a real person — not just an automated filter.</p>
+              </div>
+            </div>
+
+            <div class="safety-item">
+              <div class="safety-item-icon">
+                <span class="material-symbols-outlined icon-fill" style="font-size:16px">block</span>
+              </div>
+              <div class="safety-item-content">
+                <h4>Zero Tolerance for Explicit Content</h4>
+                <p>Any account sending explicit, harmful, or inappropriate content is permanently banned — no second chances.</p>
+              </div>
+            </div>
+
+            <div class="safety-item">
+              <div class="safety-item-icon">
+                <span class="material-symbols-outlined icon-fill" style="font-size:16px">lock_person</span>
+              </div>
+              <div class="safety-item-content">
+                <h4>Privacy-First Architecture</h4>
+                <p>We collect the minimum data needed to run the platform, never sell it, and default to protecting teen identities over everything else.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: badges & stats -->
+        <div class="safety-right">
+          <div class="safety-badge-card reveal" style="transition-delay:0.1s">
+            <div class="big-icon">
+              <span class="material-symbols-outlined icon-fill">gpp_good</span>
+            </div>
+            <h3>No Explicit Content — Ever</h3>
+            <p>Images, videos, and links cannot be shared inside chats. Ever. This single decision eliminates the most common vectors of teen online harm.</p>
+          </div>
+
+          <div class="stat-cards reveal" style="transition-delay:0.2s">
+            <div class="stat-card">
+              <div class="stat-num">Reviewed</div>
+              <div class="stat-lbl">Every report, by a real person</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">0</div>
+              <div class="stat-lbl">Images ever shared</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">13–17</div>
+              <div class="stat-lbl">Age range only</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">1</div>
+              <div class="stat-lbl">Active chat at a time</div>
+            </div>
+          </div>
+
+          <div class="card safety-guide-card reveal" style="transition-delay:0.3s">
+            <span class="t-label guide-label">For Parents &amp; Teens</span>
+            <p>We've written an open, honest guide covering how Luneya works, what data we collect,
+              and why we made every safety decision we did.</p>
+            <a href="#" class="btn btn-ghost btn-sm">
+              Read the Safety Guide
+              <span class="material-symbols-outlined" style="font-size:15px">open_in_new</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ============================================================
+     ABOUT
+     ============================================================ -->
+  <section id="about">
+    <div class="container">
+      <div class="about-inner">
+        <!-- Text -->
+        <div class="about-text reveal">
+          <p class="t-label section-label">Why Luneya Exists</p>
+          <h2 class="t-h1">Teens today are more connected — and lonelier than ever</h2>
+          <p class="body-p" style="margin-top:20px;color:var(--ink-2);font-size:15px;line-height:1.75;margin-bottom:14px;">
+            The average teenager sends hundreds of messages a day. They have thousands of followers.
+            They're constantly online. And yet study after study shows Gen Z feels deeply disconnected
+            from real relationships.
+          </p>
+          <p class="body-p" style="color:var(--ink-2);font-size:15px;line-height:1.75;margin-bottom:14px;">
+            Mainstream social media optimises for engagement — likes, reactions, virality.
+            It rewards performance over presence. It replaces depth with volume.
+          </p>
+          <p class="body-p" style="color:var(--ink-2);font-size:15px;line-height:1.75;margin-bottom:0;">
+            Luneya is the opposite. It's designed to create the conditions for one genuine
+            conversation — and get out of the way.
+          </p>
+
+          <div class="about-stats">
+            <div class="about-stat">
+              <div class="num">61%</div>
+              <div class="lbl">of teens feel lonely despite being online daily</div>
+            </div>
+            <div class="about-stat">
+              <div class="num">3.7h</div>
+              <div class="lbl">average daily screen time for teenagers</div>
+            </div>
+            <div class="about-stat">
+              <div class="num">1 in 3</div>
+              <div class="lbl">teens report feeling worse after social media use</div>
+            </div>
+            <div class="about-stat">
+              <div class="num">0</div>
+              <div class="lbl">infinite scroll features on Luneya</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quote visual -->
+        <div class="about-visual reveal" style="transition-delay:0.15s">
+          <div class="about-quote">
+            <span class="quote-mark">&ldquo;</span>
+            <p class="quote-text">
+              "I talked to one person on Luneya for two weeks. I still think about that conversation.
+              On Instagram I talk to hundreds of people and remember none of it."
+            </p>
+            <span class="quote-author">— Beta tester, 15, Mumbai</span>
+          </div>
+
+          <div class="card principle-card">
+            <div class="principle-heading">
+              <div class="principle-icon">
+                <span class="material-symbols-outlined icon-fill" style="font-size:18px">favorite</span>
+              </div>
+              <h3 class="t-h3">The Luneya Principle</h3>
+            </div>
+            <p>One meaningful conversation is worth more than a thousand hollow interactions.
+              We're not trying to build the biggest teen platform. We're building the most intentional one.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ============================================================
+     PRIVACY — "Built by subtraction" (Version B section)
+     Content from Version A's feature section — preserved as its own section
+     ============================================================ -->
+  <section id="privacy">
+    <div class="container--narrow">
+      <div class="privacy-header reveal">
+        <p class="t-label section-label">What's Not Here</p>
+        <h2 class="t-h1">Built by subtraction.</h2>
+        <p class="t-body-lg intro" style="margin-top:14px;">
+          Most social apps earn money from your attention. Luneya doesn't. So we removed everything that makes social media exhausting — and kept only what makes genuine connection possible.
+        </p>
+      </div>
+
+      <div class="no-list reveal" style="transition-delay:0.08s">
+        <div class="no-item">
+          <span class="no-label">No</span>
+          Public profiles
+        </div>
+        <div class="no-item">
+          <span class="no-label">No</span>
+          Follower counts
+        </div>
+        <div class="no-item">
+          <span class="no-label">No</span>
+          Image sharing
+        </div>
+        <div class="no-item">
+          <span class="no-label">No</span>
+          Video content
+        </div>
+        <div class="no-item">
+          <span class="no-label">No</span>
+          Swipe mechanics
+        </div>
+        <div class="no-item">
+          <span class="no-label">No</span>
+          Engagement metrics
+        </div>
+        <div class="no-item">
+          <span class="no-label">No</span>
+          Algorithmic feed
+        </div>
+        <div class="no-item">
+          <span class="no-label">No</span>
+          Stories or reels
+        </div>
+        <div class="no-item">
+          <span class="no-label">No</span>
+          Like buttons
+        </div>
+        <div class="no-item">
+          <span class="no-label">No</span>
+          Streak tracking
+        </div>
+        <div class="no-item">
+          <span class="no-label">No</span>
+          Ads
+        </div>
+        <div class="no-item">
+          <span class="no-label">No</span>
+          Notifications to pull you back
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay:0.14s;margin-top:12px;">
+        <p class="privacy-closing">Just honest conversation.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="reveal" style="margin-bottom:48px;">
+        <p class="t-label section-label">Real Stories</p>
+        <h2 class="t-h1">Loved by teens and parents.</h2>
+        <p class="t-body-lg" style="color:var(--ink-2);margin-top:12px;">
+          These aren't paid endorsements — they're real conversations from real people using Luneya.
+        </p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Finally a place where I can just talk without worrying about followers seeing everything. It feels like an actual conversation."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">S</div>
+            <div>
+              <div class="author-name">Shagun</div>
+              <div class="author-role">16, Beta user</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"As a parent, I love the weekly digest. I know my kid is safe without invading their privacy. That balance was impossible before."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="color:var(--safe-text);background:var(--safe-subtle);border-color:rgba(76,215,246,0.3)">S</div>
+            <div>
+              <div class="author-name">Sunita Sharma</div>
+              <div class="author-role">Parent, Beta user</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"My daughter's actually reading books again and texting one friend instead of scrolling endlessly. This app isn't designed to be addictive."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">K</div>
+            <div>
+              <div class="author-name">Kailash Gupta</div>
+              <div class="author-role">Parent, Beta user</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ============================================================
+     PRICING
+     ============================================================ -->
+  <section id="pricing">
+    <div class="container">
+      <div class="reveal" style="text-align:center;margin-bottom:52px;">
+        <p class="t-label section-label">Fair Pricing</p>
+        <h2 class="t-h1">Free. Forever.</h2>
+        <p class="t-body-lg" style="color:var(--ink-2);margin-top:12px;max-width:48ch;margin-left:auto;margin-right:auto;">
+          Core features are free for everyone. We'll never charge teens for safety or charge parents for peace of mind.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card card reveal">
+          <h3 class="t-h3">For Teens</h3>
+          <div class="price">
+            <span class="amount">$0</span>
+            <span class="period">/month</span>
+          </div>
+          <ul class="pricing-features">
+            <li><span class="material-symbols-outlined check-icon">check_circle</span> Unlimited 1-on-1 chats</li>
+            <li><span class="material-symbols-outlined check-icon">check_circle</span> Age-verified matching</li>
+            <li><span class="material-symbols-outlined check-icon">check_circle</span> Real-time safety features</li>
+            <li><span class="material-symbols-outlined check-icon">check_circle</span> Zero ads</li>
+            <li><span class="material-symbols-outlined check-icon">check_circle</span> Full privacy</li>
+          </ul>
+          <button class="btn btn-primary" type="button" style="width:100%;margin-top:auto;">Get Started</button>
+        </div>
+
+        <div class="pricing-card card pricing-featured reveal" style="transition-delay:0.08s">
+          <div class="featured-badge">Guardian</div>
+          <h3 class="t-h3">For Guardians</h3>
+          <div class="price">
+            <span class="amount">$0</span>
+            <span class="period">/month</span>
+          </div>
+          <ul class="pricing-features">
+            <li><span class="material-symbols-outlined check-icon">check_circle</span> Weekly digest emails</li>
+            <li><span class="material-symbols-outlined check-icon">check_circle</span> Real-time safety alerts</li>
+            <li><span class="material-symbols-outlined check-icon">check_circle</span> Mood signals &amp; trends</li>
+            <li><span class="material-symbols-outlined check-icon">check_circle</span> Emergency contact access</li>
+            <li><span class="material-symbols-outlined check-icon">check_circle</span> Family insights</li>
+          </ul>
+          <button class="btn btn-ghost" type="button" style="width:100%;margin-top:auto;">It's Always Free</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ============================================================
+     FAQ
+     ============================================================ -->
+  <section id="faq">
+    <div class="container">
+      <div class="reveal" style="text-align:center;margin-bottom:52px;">
+        <p class="t-label section-label">Got Questions?</p>
+        <h2 class="t-h1">Frequently asked questions.</h2>
+        <p class="t-body-lg" style="color:var(--ink-2);margin-top:12px;">
+          Everything you need to know about Luneya, safety, and how we protect your privacy.
+        </p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item reveal">
+          <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-1">
+            <span>What age can join Luneya?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-1">
+            <p>Luneya is for ages 13–18. We use age verification during signup and age-aware matching to ensure teens only chat with others within their age band. Users under 16 require parental consent (COPPA compliant).</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-2">
+            <span>How is my data protected?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-2">
+            <p>Messages are encrypted end-to-end. Your data is never sold to third parties. We're fully COPPA compliant and never use your information for advertising. You can delete your account anytime, and all your data is permanently removed.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-3">
+            <span>How do parents see their teen's activity?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-3">
+            <p>Guardians receive a weekly digest with insights like activity trends, mood signals, and safety alerts — but never read actual messages. We believe transparency about the system matters more than surveillance of your teen.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-4">
+            <span>What happens if someone breaks the rules?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-4">
+            <p>Real humans review every report within 24 hours. We have clear consequences: warnings, temporary restrictions, or account suspension based on severity. Serious violations (threats, exploitation) are handled immediately and reported to appropriate authorities.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-5">
+            <span>Will Luneya always be free?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-5">
+            <p>Yes. Core features (1-on-1 chat, age verification, safety) will always be free. We may add optional premium features like themes or export history, but we'll never paywall safety or core conversation features.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-6">
+            <span>How do I report something?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-6">
+            <p>There's a report button on every message and profile. You can report abuse, inappropriate content, or safety concerns anonymously. Our team investigates immediately, and we follow up with real actions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ============================================================
+     CTA
+     ============================================================ -->
+  <section id="cta">
+    <div class="container">
+      <div class="cta-box card reveal">
+        <div class="cta-box-inner">
+          <div class="hero-badge" style="margin:0 auto 28px">
+            <span class="dot"></span>
+            <span class="t-caption">Now accepting beta sign-ups</span>
+          </div>
+
+          <h2 class="t-h1">Ready for a conversation<br>that actually means something?</h2>
+          <p class="t-body-lg cta-sub" style="margin-top:14px;margin-bottom:32px;">
+            Join teens who are done with the noise — and ready for one conversation that actually means something.
+          </p>
+
+          <form class="cta-form-wrap">
+            <input type="email" placeholder="your@email.com" aria-label="Email address" required />
+            <button type="submit" class="btn btn-primary">
+              Request invite
+              <span class="material-symbols-outlined" style="font-size:15px">arrow_forward</span>
+            </button>
+          </form>
+
+          <span class="t-caption cta-note">
+            For ages 13–17 only. Parental consent required for under 16 (COPPA). No data sold. Ever.
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     FOOTER
+     ============================================================ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#" class="footer-logo">Luneya</a>
+          <p>A safe space for teenagers to find genuine connections through shared interests and intentional conversation.</p>
+          <div>
+            <span class="age-badge">
+              <span class="material-symbols-outlined icon-fill" style="font-size:11px">shield</span>
+              For ages 13–17 only
+            </span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#safety">Safety</a></li>
+            <li><a href="#about">Our Story</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Safety</h4>
+          <ul>
+            <li><a href="safety_guide.html">Safety Guide</a></li>
+            <li><a href="community_rules.html">Community Rules</a></li>
+            <li><a href="report_abuse.html">Report Abuse</a></li>
+            <li><a href="trust_safety_team.html">Trust & Safety Team</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy_policy.html">Privacy Policy</a></li>
+            <li><a href="terms_of_service.html">Terms of Service</a></li>
+            <li><a href="cookie_policy.html">Cookie Policy</a></li>
+            <li><a href="age_requirements.html">Age Requirements</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Luneya. All rights reserved.</span>
+        <span>Built with care, for teens who deserve better.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
